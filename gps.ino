@@ -11,7 +11,6 @@ void setup() {
 void loop() {
     // print the string when a newline arrives:
     if (string_complete) {
-        //String GPxxx = NMEA_coordinates.substring(0, 6);
         if (NMEA_coordinates.substring(0, 6) == GPGLL) {
             Serial.println(NMEA_coordinates);
         }
