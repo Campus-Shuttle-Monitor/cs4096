@@ -1,8 +1,8 @@
-# Shuttle Tracker (README still in progress...)
+# Shuttle Tracker
 
-The trackers will be prototyped with Arduino Uno's. Each Uno will have a **LoRa** (stands for **Lo**ng **Ra**nge- has at least a 3 mile range) radio module and a **GPS** module attached. The GPS will connect to satellites to calculate the position of the shuttle and will serially transmit the information to the Uno. This information is in [NMEA](http://aprs.gids.nl/nmea/) format. Because only the latitude and longitude are of interest, the Uno will grab the _$GPGLL_ NMEA string and use the LoRa module to transmit the string to the Raspberry Pi's LoRa module. The RPi's LoRa module will receive the string and serially transmit this information to the RPi. The RPi will parse the string and send it to the web server in order to deliver the location to the shuttle tracker application.
+The trackers are prototyped with Arduino Uno's. Each Uno has a **LoRa** (stands for **Lo**ng **Ra**nge- has at least a 3 mile range) radio module and a **GPS** module attached. The GPS uses trilateration from multiple satellite signals to calculate the position of the shuttle. It then serially transmits the information to the Uno in [NMEA](http://aprs.gids.nl/nmea/) format. Because only the latitude and longitude are of interest, the Uno will grab the _$GPGLL_ NMEA string and use the LoRa module to serially transmit the string to the Raspberry Pi's LoRa module. The RPi's LoRa module will receive the string and serially transmit this information to the RPi. The RPi will parse the string and deliver the location to the shuttle tracker application.
 
-![](schematics/TrackerCommunication.png?raw=true)
+![](images/TrackerCommunication.png?raw=true)
 
 Check out this [video](https://www.youtube.com/watch?v=ccRfZrJZzaI&feature=youtu.be). I was able to get an example set up with the RPi communicating with a singular Uno. The Uno was connected to the Mac and was outputting to the serial monitor every time it transmitted a radio packet. The RPi was connected to the external monitor and was outputting to the command line every time it received a radio packet. So far I've tested a distance of ~30 feet. Yet to test 3 mile range.
 
@@ -17,10 +17,126 @@ Components needed:
 
 ## Setup
 
-### Raspberry Pi
+If you already got the RPi and Uno hardware set up and configured, head down to the [next section](#Running-the-Shuttle-Tracker)
 
-![](schematics/RPi-Setup.png?raw=true)
+### RPi
+
+Refer to the table below for the pinout connections.
+
+| Raspberry Pi | LoRa Module |
+| ------------ | ----------- |
+| 3.3V         | 3.3V        |
+| Ground       | Ground      |
+| GPIO 10      | MOSI        |
+| GPIO 9       | MISO        |
+| GPIO 11      | SCK         |
+| GPIO 8       | NSS/Enable  |
+| GPIO 4       | DIO 0       |
+| GPIO 17      | DIO 1       |
+| GPIO 18      | DIO 2       |
+| GPIO 27      | DIO 3       |
+| GPIO 22      | RST         |
+
+#### Configuring RPi
+
+SPI needs to be enabled on the RPi.
+
+Type the following command in the configuration window:
+
+```
+sudo raspi-config
+```
+
+> ![](images/RPiConfig/1.png?raw=true)
+
+Go to **Interfacing Options** and enable SPI interface
+
+> ![](images/RPiConfig/2.png?raw=true) > ![](images/RPiConfig/3.png?raw=true)
+
+Make sure pip3 and python3 are updated to the latest version.
+
+Install the GPIO package to control the GPIO pins on the RPi:
+
+```
+pip3 install RPi.GPIO
+```
+
+Install SPI package to control SPI communication between LoRa and RPi:
+
+```
+pip3 install spidev
+```
+
+Install pyLoRa package to use the radio modules associated with LoRa:
+
+```
+pip3 install pyLoRa
+```
+
+Add the package path information to RPi. Alternatively, use the following commands to manually download the libraries and use the same directory when cloning the repository:
+
+```
+sudo apt-get install python-rpi.gpio python3-rpi.gpio
+sudo apt-get install python-spidev python3-spidev
+```
 
 ### Uno
 
-![](schematics/Uno-Setup.png?raw=true)
+Refer to the tables below for pinout connections.
+
+| Uno Board | LoRa Module |
+| --------- | ----------- |
+| 3.3V      | 3.3V        |
+| Ground    | Ground      |
+| D10       | NSS/Enable  |
+| D2        | DIO 0       |
+| D13       | SCK         |
+| D12       | MISO        |
+| D11       | MOSI        |
+| D9        | RST         |
+
+| Uno Board | GPS Module |
+| --------- | ---------- |
+| 5V        | Vcc        |
+| Ground    | Ground     |
+| Rx        | Tx         |
+
+Download the [RadioHead library](http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.113.zip) and add it to your Arduino IDE libraries. You may have to restart your Arduino IDE depending on how you add the library.
+
+## Running the Shuttle Tracker
+
+Clone the repository:
+
+```
+git clone https://github.com/Campus-Shuttle-Monitor/cs4096.git
+```
+
+### RPi
+
+Navigate to the **server** directory in the command line and run the following command:
+
+```
+python3 LORA_PI_Rx.py
+```
+
+### Uno
+
+Navigate to the **client** directory and open the **LORA_CLIENT_Tx.ino** sketch. _Disconnect_ the GPS's Tx connection to the Uno's Rx pin. Upload the sketch to the Uno. Once the upload is complete, _reconnect_ the GPS's Tx pin to the Uno's Rx pin. The reason for the disconnection and reconnection is due to the Uno using its own Tx and Rx pins to serially upload the sketch to the microcontroller. Once upload is complete, those pins can be used for serial communication with other devices. Make sure the Serial monitor's baud rate is set to 9600.
+
+### Results
+
+The RPi should now be receiving data from the Uno. If you see some incomplete NMEA strings (cluster of commas instead of full GPS data), don't worry. This is because the GPS is trying to calculate it's position. This usually happens on initial power up. You should get full NMEA strings after a few minutes.
+
+## Resources
+
+- https://circuitdigest.com/microcontroller-projects/raspberry-pi-with-lora-peer-to-peer-communication-with-arduino
+- https://www.airspayce.com/mikem/arduino/RadioHead/
+- https://github.com/rpsreal/pySX127x
+- https://groups.google.com/g/radiohead-arduino?pli=1
+- https://pypi.org/project/pyLoRa/ (We're already using this package, and apparently it supports encrypted communication so we need to look into this before security audit)
+
+#### Might be helpful
+
+- https://miliohm.com/multi-clients-lora-with-a-server-communication/ (Although this article isn't using the same set up, it might still help us figure out how to interface with multiple Uno's)
+- https://www.ecfr.gov/cgi-bin/text-idx?SID=6ffb3bf3dfec8f3673f7ea39148bf5aa&mc=true&node=pt47.1.15&rgn=div5 (regulations on radio...need to figure out unlicensed frequency band info for US)
+- https://predictabledesigns.com/most-important-decision-when-creating-wireless-product/ (also might be helpful for frequency band info)
