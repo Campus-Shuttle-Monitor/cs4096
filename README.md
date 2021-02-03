@@ -101,7 +101,9 @@ Refer to the tables below for pinout connections.
 | Ground    | Ground     |
 | Rx        | Tx         |
 
-Download the [RadioHead library](http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.113.zip) and add it to your Arduino IDE libraries. You may have to restart your Arduino IDE depending on how you add the library.
+Install the SPI library by navigating to **tools>Manage Libraries**.
+
+Download the [RadioHead library](http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.113.zip) and add it to your Arduino IDE libraries by navigating to **Sketch>Add .ZIP Library**. Restart your Arduino IDE.
 
 ## Running the Shuttle Tracker
 
