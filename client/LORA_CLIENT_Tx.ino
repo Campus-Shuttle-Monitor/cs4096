@@ -52,10 +52,17 @@ void loop() {
     // print the string when a newline arrives:
     if (string_complete) {
         if (NMEA_coordinates.substring(0, 6) == GPGLL) {
+            Serial.println("================================================");
             Serial.println(NMEA_coordinates);
             const char* radiopacket = NMEA_coordinates.c_str();
-            rf95.send((uint8_t *)radiopacket, 50);
-            Serial.println("sent");
+            if (strlen(radiopacket) != 52){
+              Serial.println("Searching for satellites. Position fix not yet found");
+              delay(5000);
+            }
+            else {
+                rf95.send((uint8_t *)radiopacket, 50);
+                Serial.println("sent\n");
+            }
         }
 
         // clear NMEA coordinate string
