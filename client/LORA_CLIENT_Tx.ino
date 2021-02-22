@@ -14,6 +14,7 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT);
 String NMEA_coordinates = ""; // a string to hold incoming NMEA data
 boolean string_complete = false; // boolean that determines whether string is completely read from incoming serial stream
 String GPGLL = "$GPGLL"; // GPxxx header of desired NMEA string
+unsigned long startTime, stopTime, duration;
 
 void setup() 
 {
@@ -56,12 +57,25 @@ void loop() {
             Serial.println(NMEA_coordinates);
             const char* radiopacket = NMEA_coordinates.c_str();
             if (strlen(radiopacket) != 52){
-              Serial.println("Searching for satellites. Position fix not yet found");
-              delay(5000);
+                Serial.println("Searching for satellites. Position fix not yet found");
+                startTime = millis();
+                rf95.send((uint8_t *)"Searching for satellites. Position fix not yet found", 52);
+                stopTime = millis();
+                Serial.print("Transmission Time: ");
+                Serial.print(stopTime-startTime);
+                Serial.println("ms");
+                Serial.println("Delaying for 10 seconds now\n");
+                delay(10000);
             }
             else {
+                startTime = millis();
                 rf95.send((uint8_t *)radiopacket, 50);
-                Serial.println("sent\n");
+                stopTime = millis();
+                Serial.print("Transmission Time: ");
+                Serial.print(stopTime-startTime);
+                Serial.println("ms");
+                Serial.println("Sent. Delaying for 10 seconds now\n");
+                delay(10000);
             }
         }
 
