@@ -55,7 +55,8 @@ void loop() {
             Serial.println("================================================");
             Serial.println(NMEA_coordinates);
             const char* radiopacket = NMEA_coordinates.c_str();
-            if (strlen(radiopacket) != 52){
+            //If NMEA sentence contains 'V', data not valid
+            if (NMEA_coordinates.indexOf('V') != -1){
               Serial.println("Searching for satellites. Position fix not yet found");
               delay(5000);
             }
