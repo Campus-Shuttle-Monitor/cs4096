@@ -1,5 +1,6 @@
-#include <SPI.h> //Import SPI librarey 
-#include <RH_RF95.h> // RF95 from RadioHead Librarey 
+#include <SPI.h> //Import SPI library 
+#include <RH_RF95.h> // RF95 from RadioHead Library 
+#include <avr/wdt.h> //Watchdog timer from AVR Library
 
 #define RFM95_CS 10 //CS if Lora connected to pin 10
 #define RFM95_RST 9 //RST of Lora connected to pin 9
@@ -46,10 +47,14 @@ void setup()
   
   // reserve 200 bytes for the NMEA_coordinates:
   NMEA_coordinates.reserve(200);
+
+  wdt_enable(WDTO_8S); //enabling watchdog timer so Uno resets if program hangs
+  Serial.println("Start Program");
 }
 
 
 void loop() {
+    wdt_reset();
     // print the string when a newline arrives:
     if (string_complete) {
         if (NMEA_coordinates.substring(0, 6) == GPGLL) {
@@ -65,7 +70,9 @@ void loop() {
                 Serial.print(stopTime-startTime);
                 Serial.println("ms");
                 Serial.println("Delaying for 10 seconds now\n");
-                delay(10000);
+                delay(5000);
+                wdt_reset();
+                delay(5000);
             }
             else {
                 startTime = millis();
@@ -75,7 +82,9 @@ void loop() {
                 Serial.print(stopTime-startTime);
                 Serial.println("ms");
                 Serial.println("Sent. Delaying for 10 seconds now\n");
-                delay(10000);
+                delay(5000);
+                wdt_reset();
+                delay(5000);
             }
         }
 
