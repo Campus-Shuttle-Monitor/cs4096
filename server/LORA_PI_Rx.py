@@ -2,11 +2,20 @@ from time import sleep
 from SX127x.LoRa import *
 from SX127x.board_config import BOARD
 import logging
+from parseNMEA import parseNMEA
+import simplekml
 
-BOARD.setup()
+#name of kml and logger file
+NAME = 'FieldTest'
 
 #set up logging
 logger = logging.Logger
+
+#set up variables to build kml file that will map coordinates on Google Earth
+coordList = []
+kml = simplekml.Kml()
+
+BOARD.setup()
 
 class LoRaRcvCont(LoRa):
     def __init__(self, verbose=False):
@@ -31,13 +40,20 @@ class LoRaRcvCont(LoRa):
         decoded_payload = bytes(payload).decode("utf-8",'ignore') 
         print(decoded_payload)
         logging.info(decoded_payload)
+
+        data = parseNMEA(decoded_payload)
+        if data[0] == 1:
+            tup = tuple(data[1:])
+            kml.newpoint(coords=[tup])
+            coordList.append(tup)
+
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
         self.set_mode(MODE.RXCONT) 
 
 if __name__ == '__main__':
     logging.basicConfig(
-        filename='FieldTest.log',
+        filename= "FieldTest/log/" + NAME + '.log',
         filemode='w+',
         format='%(asctime)s %(levelname)-8s %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
@@ -63,4 +79,6 @@ if __name__ == '__main__':
         print("")
         lora.set_mode(MODE.SLEEP)
         logging.info('--------------- PROGRAM END ---------------')
+        kml.newlinestring(coords=coordList)
+        kml.save("FieldTest/kml/" + NAME + ".kml")
         BOARD.teardown()

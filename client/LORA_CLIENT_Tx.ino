@@ -1,4 +1,4 @@
-#include <SPI.h> //Import SPI library 
+#include <SPI.h> //Import SPI Library 
 #include <RH_RF95.h> // RF95 from RadioHead Library 
 #include <avr/wdt.h> //Watchdog timer from AVR Library
 
@@ -19,7 +19,9 @@ unsigned long startTime, stopTime, duration;
 
 void setup() 
 {
- 
+  wdt_enable(WDTO_8S); //enabling watchdog timer so Uno resets if program hangs
+  Serial.println("Start Program");
+
 //Initialize Serial Monitor
   Serial.begin(9600);
   
@@ -48,8 +50,6 @@ void setup()
   // reserve 200 bytes for the NMEA_coordinates:
   NMEA_coordinates.reserve(200);
 
-  wdt_enable(WDTO_8S); //enabling watchdog timer so Uno resets if program hangs
-  Serial.println("Start Program");
 }
 
 
