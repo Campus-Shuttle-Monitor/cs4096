@@ -53,7 +53,7 @@ class LoRaRcvCont(LoRa):
 
 if __name__ == '__main__':
     logging.basicConfig(
-        filename= "FieldTest/log/" + NAME + '.log',
+        filename= "../FieldTest/log/" + NAME + '.log',
         filemode='w+',
         format='%(asctime)s %(levelname)-8s %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
@@ -80,5 +80,5 @@ if __name__ == '__main__':
         lora.set_mode(MODE.SLEEP)
         logging.info('--------------- PROGRAM END ---------------')
         kml.newlinestring(coords=coordList)
-        kml.save("FieldTest/kml/" + NAME + ".kml")
+        kml.save("../FieldTest/kml/" + NAME + ".kml")
         BOARD.teardown()
