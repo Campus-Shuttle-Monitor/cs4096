@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <Point id="2">
+                <coordinates>-91.77707033333333,37.9539935,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="5">
+            <Point id="4">
+                <coordinates>-91.777101,37.954992,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="7">
+            <Point id="6">
+                <coordinates>-91.777101,37.95502033333333,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="9">
+            <Point id="8">
+                <coordinates>-91.77762616666666,37.95521166666666,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11">
+            <Point id="10">
+                <coordinates>-91.77899466666666,37.95521033333333,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="13">
+            <Point id="12">
+                <coordinates>-91.78028516666667,37.955350833333334,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="15">
+            <Point id="14">
+                <coordinates>-91.78141283333333,37.955814,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="17">
+            <Point id="16">
+                <coordinates>-91.782413,37.95869033333334,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="19">
+            <Point id="18">
+                <coordinates>-91.78149216666667,37.958749833333336,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="21">
+            <LineString id="20">
+                <coordinates>-91.77707033333333,37.9539935,0.0 -91.777101,37.954992,0.0 -91.777101,37.95502033333333,0.0 -91.77762616666666,37.95521166666666,0.0 -91.77899466666666,37.95521033333333,0.0 -91.78028516666667,37.955350833333334,0.0 -91.78141283333333,37.955814,0.0 -91.782413,37.95869033333334,0.0 -91.78149216666667,37.958749833333336,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>
