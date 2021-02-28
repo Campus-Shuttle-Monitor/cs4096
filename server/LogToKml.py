@@ -1,3 +1,6 @@
+#script to create kml file from log file...will save in path cs4096/FieldTest/kml/
+#To execute: python3 LogToKml.py <log_file> <desired_kml_file_name>
+
 import sys
 from parseNMEA import parseNMEA
 import simplekml
