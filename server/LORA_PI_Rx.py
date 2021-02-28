@@ -6,7 +6,7 @@ from parseNMEA import parseNMEA
 import simplekml
 
 #name of kml and logger file
-NAME = 'FieldTest'
+NAME = ""
 
 #set up logging
 logger = logging.Logger
@@ -69,6 +69,8 @@ if __name__ == '__main__':
     lora.set_pa_config(pa_select=1)
 
     try:
+        print("Name of logger and kml file: ", end="")
+        NAME = input()
         lora.start()
     except KeyboardInterrupt:
         sys.stdout.flush()
