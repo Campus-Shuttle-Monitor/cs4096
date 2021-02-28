@@ -9,9 +9,7 @@ kml = simplekml.Kml()
 with open(sys.argv[1]) as f:
     line = f.readline()
     while line:
-        print(line)
         data = parseNMEA(line)
-        print(data)
         if data[0] == 1:
             tup = tuple(data[1:])
             kml.newpoint(coords=[tup])
