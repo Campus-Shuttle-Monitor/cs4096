@@ -52,15 +52,6 @@ class LoRaRcvCont(LoRa):
         self.set_mode(MODE.RXCONT) 
 
 if __name__ == '__main__':
-    logging.basicConfig(
-        filename= "../FieldTest/log/" + NAME + '.log',
-        filemode='w+',
-        format='%(asctime)s %(levelname)-8s %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',
-        level=logging.DEBUG)
-
-    logging.info('-------------- PROGRAM START --------------')
-
     lora = LoRaRcvCont(verbose=False)
     lora.set_mode(MODE.STDBY)
 
@@ -71,6 +62,16 @@ if __name__ == '__main__':
     try:
         print("Name of logger and kml file: ", end="")
         NAME = input()
+        
+        logging.basicConfig(
+        filename= "../FieldTest/log/" + NAME + '.log',
+        filemode='w+',
+        format='%(asctime)s %(levelname)-8s %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',
+        level=logging.DEBUG)
+
+        logging.info('-------------- PROGRAM START --------------')
+
         lora.start()
     except KeyboardInterrupt:
         sys.stdout.flush()
