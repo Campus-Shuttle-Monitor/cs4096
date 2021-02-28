@@ -19,11 +19,11 @@ unsigned long startTime, stopTime, duration;
 
 void setup() 
 {
-  wdt_enable(WDTO_8S); //enabling watchdog timer so Uno resets if program hangs
-  Serial.println("Start Program");
-
 //Initialize Serial Monitor
   Serial.begin(9600);
+  
+  wdt_enable(WDTO_8S); //enabling watchdog timer so Uno resets if program hangs
+  Serial.println("Start Program");
   
 // Reset LoRa Module 
   pinMode(RFM95_RST, OUTPUT); 

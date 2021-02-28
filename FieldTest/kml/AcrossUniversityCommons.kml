@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1">
+	<name>AcrossUniversityCommons</name>
+	<gx:CascadingStyle kml:id="__managed_style_28863BBF52191BFCAF1A">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_11C4814406191BFCAF1A">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0EA17F33DD191BFCAF1A">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_11C4814406191BFCAF1A</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_28863BBF52191BFCAF1A</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="3">
+		<Point id="2">
+			<coordinates>-91.77707033333333,37.9539935,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="5">
+		<Point id="4">
+			<coordinates>-91.77710099999999,37.954992,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="7">
+		<Point id="6">
+			<coordinates>-91.77710099999999,37.95502033333333,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="9">
+		<Point id="8">
+			<coordinates>-91.77762616666666,37.95521166666666,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="11">
+		<Point id="10">
+			<coordinates>-91.77899466666666,37.95521033333333,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="13">
+		<Point id="12">
+			<coordinates>-91.78028516666667,37.95535083333333,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="15">
+		<Point id="14">
+			<coordinates>-91.78141283333333,37.955814,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="17">
+		<Point id="16">
+			<coordinates>-91.78241300000001,37.95869033333334,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="19">
+		<Point id="18">
+			<coordinates>-91.78149216666665,37.95874983333334,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="21">
+		<LineString id="20">
+			<coordinates>
+				-91.77707033333333,37.9539935,0 -91.77710099999999,37.954992,0 -91.77710099999999,37.95502033333333,0 -91.77762616666666,37.95521166666666,0 -91.77899466666666,37.95521033333333,0 -91.78028516666667,37.95535083333333,0 -91.78141283333333,37.955814,0 -91.78241300000001,37.95869033333334,0 -91.78149216666665,37.95874983333334,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	<Placemark id="0CCE4A8EE4191BFCAF1A">
+		<name>Raspberry Pi</name>
+		<LookAt>
+			<longitude>-91.77974166552431</longitude>
+			<latitude>37.95637166651712</latitude>
+			<altitude>353.0571321160957</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30</gx:fovy>
+			<range>1000.000676530763</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0EA17F33DD191BFCAF1A</styleUrl>
+		<Point>
+			<coordinates>-91.78002353770891,37.95512569541752,347.2214392401638</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
