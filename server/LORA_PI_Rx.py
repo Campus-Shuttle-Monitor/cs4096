@@ -2,7 +2,7 @@ from time import sleep
 from SX127x.LoRa import *
 from SX127x.board_config import BOARD
 import logging
-from parseNMEA import parseNMEA
+import parse
 import simplekml
 
 #name of kml and logger file
@@ -16,6 +16,9 @@ coordList = []
 kml = simplekml.Kml()
 
 BOARD.setup()
+
+#NOTE: Valid decoded payload from tracker must be in the format: <trackerID_with_CRC><NMEA_sentence_with_CRC>
+#       Example: AA11*27$GPGLL,3757.30780,N,09146.63871,W,232417.00,A,A*71
 
 class LoRaRcvCont(LoRa):
     def __init__(self, verbose=False):
@@ -31,21 +34,32 @@ class LoRaRcvCont(LoRa):
             rssi_value = self.get_rssi_value()
             status = self.get_modem_status()
             sys.stdout.flush()
-            
 
     def on_rx_done(self):
         print("\nReceived: ")
+        
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
         decoded_payload = bytes(payload).decode("utf-8",'ignore') 
-        print(decoded_payload)
+        
+        print(decoded_payload) 
+      
         logging.info(decoded_payload)
-
-        data = parseNMEA(decoded_payload)
-        if data[0] == 1:
-            tup = tuple(data[1:])
-            kml.newpoint(coords=[tup])
-            coordList.append(tup)
+        
+        #if decoded payload contains start of NMEA sentence
+        if '$' in decoded_payload:
+            NMEA_start_index = decoded_payload.index('$')
+            trackerID_data = parse.parseTrackerID(decoded_payload[:NMEA_start_index])
+            #if calculated tracker ID checksum matches received tracker checksum
+            if trackerID_data[0]:
+                #parse NMEA sentence
+                coord_data = parse.parseNMEA(decoded_payload[NMEA_start_index:])
+                #if received NMEA coordinates pass checksum
+                if coord_data[0]:
+                    tup = tuple(coord_data[1:])
+                    kml.newpoint(coords=[tup])
+                    coordList.append(tup)
+                    print("sucessfully parsed and logged")
 
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
