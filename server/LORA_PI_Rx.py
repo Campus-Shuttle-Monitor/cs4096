@@ -4,6 +4,7 @@ from SX127x.board_config import BOARD
 import logging
 from parseNMEA import parseNMEA
 import simplekml
+import crc8
 
 #name of kml and logger file
 NAME = ""
@@ -35,17 +36,38 @@ class LoRaRcvCont(LoRa):
 
     def on_rx_done(self):
         print("\nReceived: ")
+        
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
         decoded_payload = bytes(payload).decode("utf-8",'ignore') 
-        print(decoded_payload)
-        logging.info(decoded_payload)
-
-        data = parseNMEA(decoded_payload)
-        if data[0] == 1:
-            tup = tuple(data[1:])
-            kml.newpoint(coords=[tup])
-            coordList.append(tup)
+        
+        print(decoded_payload) 
+      
+        #if decoded payload contains start of NMEA sentence
+        if '$' in decoded_payload:
+            NMEA_start_index = decoded_payload.index('$')
+            if decoded_payload[NMEA_start_index-3] == '*':
+                logging.info(decoded_payload)
+                
+                #parse decoded payload into tracker ID, tracker checksum, and coordinates
+                tracker_ID = decoded_payload[:NMEA_start_index-3]
+                tracker_CRC = decoded_payload[NMEA_start_index-2:NMEA_start_index]
+                NMEA_coordinates = decoded_payload[NMEA_start_index:]
+               
+                #validating if parsed checksum are digits for later int conversion
+                if tracker_CRC.isdigit():
+                    #calculate checksum
+                    calculate_CRC = crc8.crc8()
+                    calculate_CRC.update(tracker_ID.encode('utf-8','ignore'))
+                    
+                    #if calculated checksum matches received checksum
+                    if (int(calculate_CRC.hexdigest(),16) == int(tracker_CRC)):
+                        data = parseNMEA(NMEA_coordinates)
+                        if data[0] == 1:
+                            tup = tuple(data[1:])
+                            kml.newpoint(coords=[tup])
+                            coordList.append(tup)
+                            print("sucessfully parsed and logged")
 
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()

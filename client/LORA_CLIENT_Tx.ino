@@ -1,6 +1,10 @@
 #include <SPI.h> //Import SPI Library 
 #include <RH_RF95.h> // RF95 from RadioHead Library 
 #include <avr/wdt.h> //Watchdog timer from AVR Library
+#include "CRC8.h" //Checksum generator from CRC Library
+
+#define TRACKER_ID_LENGTH 4 //Arbitrary tracker ID length
+#define TRACKER_ID "IO92" //Arbitrary tracker ID...For extensibility, implement a way to generate ID for each tracker in future
 
 #define RFM95_CS 10 //CS if Lora connected to pin 10
 #define RFM95_RST 9 //RST of Lora connected to pin 9
@@ -12,10 +16,13 @@
 // Singleton instance of the radio driver
 RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
-String NMEA_coordinates = ""; // a string to hold incoming NMEA data
+CRC8 crc;
+
+String NMEA_coordinates = ""; // a string to hold incoming NMEA sentence (GPS automatically concatenates checksum at the end)
 boolean string_complete = false; // boolean that determines whether string is completely read from incoming serial stream
 String GPGLL = "$GPGLL"; // GPxxx header of desired NMEA string
-unsigned long startTime, stopTime, duration;
+unsigned long startTime, stopTime;
+String TRACKER_ID_CRC = TRACKER_ID; //a string that will concatenate tracker ID with checksum...Format: "<tracker_ID>*<tracker_crc>"
 
 void setup() 
 {
@@ -50,17 +57,24 @@ void setup()
   // reserve 200 bytes for the NMEA_coordinates:
   NMEA_coordinates.reserve(200);
 
+  //Generate CRC for tracker ID and concatenate to TRACKER_ID_CRC
+  crc.add((uint8_t*)TRACKER_ID, TRACKER_ID_LENGTH);
+  TRACKER_ID_CRC += "*";
+  TRACKER_ID_CRC += crc.getCRC();
 }
 
 
 void loop() {
     wdt_reset();
     // print the string when a newline arrives:
+    
     if (string_complete) {
         if (NMEA_coordinates.substring(0, 6) == GPGLL) {
             Serial.println("================================================");
-            Serial.println(NMEA_coordinates);
-            const char* radiopacket = NMEA_coordinates.c_str();
+            String tracker_coord = TRACKER_ID_CRC + NMEA_coordinates;
+            //building radio packet...Format: <tracker_ID>*<tracker_checksum><NMEA_sentence_w_checksum>
+            const char* radiopacket = tracker_coord.c_str();
+            Serial.println(radiopacket);
             //If coordinates contain 'V', data not valid
             if (NMEA_coordinates.indexOf('V') != -1){
                 Serial.println("Searching for satellites. Position fix not yet found");
@@ -77,7 +91,7 @@ void loop() {
             }
             else {
                 startTime = millis();
-                rf95.send((uint8_t *)radiopacket, 50);
+                rf95.send((uint8_t *)radiopacket, 57);
                 stopTime = millis();
                 Serial.print("Transmission Time: ");
                 Serial.print(stopTime-startTime);
@@ -93,6 +107,7 @@ void loop() {
         NMEA_coordinates = "";
         string_complete = false;
     }
+    
 }
 
 /*
