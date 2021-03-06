@@ -3,8 +3,14 @@
 #include <avr/wdt.h> //Watchdog timer from AVR Library
 #include "CRC8.h" //Checksum generator from CRC Library
 
+//Format of radiopacket: <tracker_ID>*<tracker_checksum><NMEA_sentence_w_checksum>
+
 #define TRACKER_ID_LENGTH 4 //Arbitrary tracker ID length
 #define TRACKER_ID "IO92" //Arbitrary tracker ID...For extensibility, implement a way to generate ID for each tracker in future
+
+#define CRC_LENGTH 2
+#define GPGLL_LENGTH 50
+#define RADIOPACKET_LENGTH GPGLL_LENGTH + TRACKER_ID_LENGTH + CRC_LENGTH + 1
 
 #define RFM95_CS 10 //CS if Lora connected to pin 10
 #define RFM95_RST 9 //RST of Lora connected to pin 9
@@ -60,7 +66,7 @@ void setup()
   //Generate CRC for tracker ID and concatenate to TRACKER_ID_CRC
   crc.add((uint8_t*)TRACKER_ID, TRACKER_ID_LENGTH);
   TRACKER_ID_CRC += "*";
-  TRACKER_ID_CRC += crc.getCRC();
+  TRACKER_ID_CRC += String(crc.getCRC(), HEX); //append crc in hex form to end of string
 }
 
 
@@ -71,8 +77,8 @@ void loop() {
     if (string_complete) {
         if (NMEA_coordinates.substring(0, 6) == GPGLL) {
             Serial.println("================================================");
+            //building radiopacket
             String tracker_coord = TRACKER_ID_CRC + NMEA_coordinates;
-            //building radio packet...Format: <tracker_ID>*<tracker_checksum><NMEA_sentence_w_checksum>
             const char* radiopacket = tracker_coord.c_str();
             Serial.println(radiopacket);
             //If coordinates contain 'V', data not valid
@@ -91,7 +97,7 @@ void loop() {
             }
             else {
                 startTime = millis();
-                rf95.send((uint8_t *)radiopacket, 57);
+                rf95.send((uint8_t *)radiopacket, RADIOPACKET_LENGTH);
                 stopTime = millis();
                 Serial.print("Transmission Time: ");
                 Serial.print(stopTime-startTime);
@@ -129,3 +135,4 @@ void serialEvent() {
         }
     }
 }
+

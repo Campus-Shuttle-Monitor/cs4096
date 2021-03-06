@@ -19,9 +19,6 @@ BOARD.setup()
 
 #NOTE: Valid decoded payload from tracker must be in the format: <trackerID_with_CRC><NMEA_sentence_with_CRC>
 #       Example: AA11*27$GPGLL,3757.30780,N,09146.63871,W,232417.00,A,A*71
-#
-#   Parsing tracker ID only works if the CRC of the tracker ID is exactly 2 digits which is okay for now 
-#       since the tracker ID is hardcoded on client side but this should be fixed in the future
 
 class LoRaRcvCont(LoRa):
     def __init__(self, verbose=False):
@@ -52,14 +49,14 @@ class LoRaRcvCont(LoRa):
         #if decoded payload contains start of NMEA sentence
         if '$' in decoded_payload:
             NMEA_start_index = decoded_payload.index('$')
+            trackerID_data = parse.parseTrackerID(decoded_payload[:NMEA_start_index])
             #if calculated tracker ID checksum matches received tracker checksum
-            if parse.parseTrackerID(decoded_payload[:NMEA_start_index]):
+            if trackerID_data[0]:
                 #parse NMEA sentence
-                NMEA_coordinates = decoded_payload[NMEA_start_index:]
-                data = parse.parseNMEA(NMEA_coordinates)
-                #if received NMEA_coordinates pass checksum
-                if data[0] == 1:
-                    tup = tuple(data[1:])
+                coord_data = parse.parseNMEA(decoded_payload[NMEA_start_index:])
+                #if received NMEA coordinates pass checksum
+                if coord_data[0]:
+                    tup = tuple(coord_data[1:])
                     kml.newpoint(coords=[tup])
                     coordList.append(tup)
                     print("sucessfully parsed and logged")

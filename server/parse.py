@@ -27,28 +27,26 @@ def parseNMEA(sentence):
 
     return [gps.parsed_sentences, lon, lat]
 
-#parses trackerID and validates checksum
-#parameter must be a string in the following format: <tracker_ID>*<tracker_CRC>
-#returns
+
+# parses trackerID and validates checksum
+# parameter must be a string in the following format: <tracker_ID>*<tracker_CRC>
+# returns [CRC_match, tracker_ID] where 
+# CRC_match is
 #   True if calculated tracker ID CRC  matches received tracker CRC
 #   False otherwise
-#
-#only works if the CRC is exactly 2 digits which is okay for now since the tracker ID is hardcoded on client side
-#   but should be fixed in the future
 def parseTrackerID(trackerID_with_CRC):
     #making sure * delimiter wasn't lost to interference
-    if trackerID_with_CRC[-3] == '*':
+    if '*' in trackerID_with_CRC:
+        delimiter_index = trackerID_with_CRC.index('*')
         #parse trackerID_with_CRC into tracker ID and tracker checksum
-        tracker_ID = trackerID_with_CRC[:-3]
-        tracker_CRC = trackerID_with_CRC[-2:]
+        tracker_ID = trackerID_with_CRC[:delimiter_index]
+        tracker_CRC = trackerID_with_CRC[delimiter_index+1:]
                
-        #validating if parsed checksum are digits for later int conversion
-        if tracker_CRC.isdigit():
-            #calculate checksum
-            calculate_CRC = crc8.crc8()
-            calculate_CRC.update(tracker_ID.encode('utf-8','ignore'))
-                    
-            #if calculated tracker checksum matches received tracker checksum
-            return int(calculate_CRC.hexdigest(),16) == int(tracker_CRC)
+        #calculate checksum
+        calculate_CRC = crc8.crc8()
+        calculate_CRC.update(tracker_ID.encode('utf-8','ignore'))
+        #return whether calculated tracker checksum matches received tracker checksum and tracker ID
+        return [calculate_CRC.hexdigest() == tracker_CRC, tracker_ID]
     
-    return False
+    return [False, tracker_ID]
+
