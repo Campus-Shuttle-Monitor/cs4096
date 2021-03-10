@@ -2,6 +2,8 @@
 #include <RH_RF95.h> // RF95 from RadioHead Library 
 #include <avr/wdt.h> //Watchdog timer from AVR Library
 #include "CRC8.h" //Checksum generator from CRC Library
+#include <AESLib.h> //Symmetric encryption from AES Library
+#include <Base64.h> //Encoding from Base64 Library
 
 //Format of radiopacket: <tracker_ID>*<tracker_checksum><NMEA_sentence_w_checksum>
 
@@ -10,7 +12,9 @@
 
 #define CRC_LENGTH 2
 #define GPGLL_LENGTH 50
-#define RADIOPACKET_LENGTH GPGLL_LENGTH + TRACKER_ID_LENGTH + CRC_LENGTH + 1
+#define RADIOPACKET_LENGTH (GPGLL_LENGTH + TRACKER_ID_LENGTH + CRC_LENGTH + 1)
+#define ENCRYPTION_PADDING_LENGTH (16 - RADIOPACKET_LENGTH%16)
+#define RADIOPACKET_WITH_PADDING_LENGTH (RADIOPACKET_LENGTH + ENCRYPTION_PADDING_LENGTH)
 
 #define RFM95_CS 10 //CS if Lora connected to pin 10
 #define RFM95_RST 9 //RST of Lora connected to pin 9
@@ -29,6 +33,9 @@ boolean string_complete = false; // boolean that determines whether string is co
 String GPGLL = "$GPGLL"; // GPxxx header of desired NMEA string
 unsigned long startTime, stopTime;
 String TRACKER_ID_CRC = TRACKER_ID; //a string that will concatenate tracker ID with checksum...Format: "<tracker_ID>*<tracker_crc>"
+String padding = ""; //whitespace padding for radiopacket to be encrypted
+
+const uint8_t KEY[] = "ExampleAESKeyTst";
 
 void setup() 
 {
@@ -67,26 +74,38 @@ void setup()
   crc.add((uint8_t*)TRACKER_ID, TRACKER_ID_LENGTH);
   TRACKER_ID_CRC += "*";
   TRACKER_ID_CRC += String(crc.getCRC(), HEX); //append crc in hex form to end of string
+
+  //create whitespace padding
+  for (int i = 0; i < ENCRYPTION_PADDING_LENGTH; i++) {
+      padding += ' ';
+  }
+  
 }
 
 
 void loop() {
     wdt_reset();
     // print the string when a newline arrives:
-    
     if (string_complete) {
         if (NMEA_coordinates.substring(0, 6) == GPGLL) {
             Serial.println("================================================");
             //building radiopacket
-            String tracker_coord = TRACKER_ID_CRC + NMEA_coordinates;
-            const char* radiopacket = tracker_coord.c_str();
-            Serial.println(radiopacket);
+            uint8_t radiopacket[RADIOPACKET_WITH_PADDING_LENGTH+1];
             //If coordinates contain 'V', data not valid
             if (NMEA_coordinates.indexOf('V') != -1){
-                Serial.println("Searching for satellites. Position fix not yet found");
+                String tracker_coord = "Searching for satellites. Position fix not yet found            ";
+                Serial.println(tracker_coord);
+                tracker_coord.getBytes(radiopacket,RADIOPACKET_WITH_PADDING_LENGTH+1);
+                aes128_enc_multiple(KEY,radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
+                uint8_t encodedLen = base64_enc_len(RADIOPACKET_WITH_PADDING_LENGTH);
+                uint8_t encoded[encodedLen+1];
+                base64_encode((char*)encoded, (char*)radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
+                Serial.println((char*)encoded);
+                
                 startTime = millis();
-                rf95.send((uint8_t *)"Searching for satellites. Position fix not yet found", 52);
+                rf95.send(encoded, sizeof(encoded));
                 stopTime = millis();
+                
                 Serial.print("Transmission Time: ");
                 Serial.print(stopTime-startTime);
                 Serial.println("ms");
@@ -96,13 +115,24 @@ void loop() {
                 delay(5000);
             }
             else {
+                String tracker_coord = TRACKER_ID_CRC + NMEA_coordinates + padding;
+                Serial.println(tracker_coord);
+                tracker_coord.getBytes(radiopacket,RADIOPACKET_WITH_PADDING_LENGTH+1);
+                aes128_enc_multiple(KEY,radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
+                uint8_t encodedLen = base64_enc_len(RADIOPACKET_WITH_PADDING_LENGTH);
+                uint8_t encoded[encodedLen+1];
+                base64_encode((char*)encoded, (char*)radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
+                Serial.println((char*)encoded);
+                
                 startTime = millis();
-                rf95.send((uint8_t *)radiopacket, RADIOPACKET_LENGTH);
+                rf95.send(encoded, sizeof(encoded));
                 stopTime = millis();
-                Serial.print("Transmission Time: ");
+                
+                Serial.print("\nTransmission Time: ");
                 Serial.print(stopTime-startTime);
                 Serial.println("ms");
                 Serial.println("Sent. Delaying for 10 seconds now\n");
+                
                 delay(5000);
                 wdt_reset();
                 delay(5000);
@@ -115,6 +145,7 @@ void loop() {
     }
     
 }
+         
 
 /*
 SerialEvent occurs whenever a new data comes in the
@@ -135,4 +166,3 @@ void serialEvent() {
         }
     }
 }
-

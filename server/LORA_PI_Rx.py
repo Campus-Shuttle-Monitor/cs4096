@@ -25,6 +25,7 @@ class LoRaRcvCont(LoRa):
         super(LoRaRcvCont, self).__init__(verbose)
         self.set_mode(MODE.SLEEP)
         self.set_dio_mapping([0] * 6)
+        self.key = "ExampleAESKeyTst"
 
     def start(self):
         self.reset_ptr_rx()
@@ -37,15 +38,14 @@ class LoRaRcvCont(LoRa):
 
     def on_rx_done(self):
         print("\nReceived: ")
-        
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
-        decoded_payload = bytes(payload).decode("utf-8",'ignore') 
+        decoded_payload = parse.decryptPayload(payload, self.key)        
         
-        print(decoded_payload) 
-      
+        print(decoded_payload)
+
         logging.info(decoded_payload)
-        
+
         #if decoded payload contains start of NMEA sentence
         if '$' in decoded_payload:
             NMEA_start_index = decoded_payload.index('$')
@@ -99,3 +99,4 @@ if __name__ == '__main__':
         kml.newlinestring(coords=coordList)
         kml.save("../FieldTest/kml/" + NAME + ".kml")
         BOARD.teardown()
+
