@@ -1,5 +1,7 @@
 from micropyGPS import MicropyGPS
 import crc8
+from Crypto.Cipher import AES
+import base64
 
 # parses NMEA sentence
 # returns [num_parsed_sentences, longitude, latitude] where 
@@ -50,3 +52,20 @@ def parseTrackerID(trackerID_with_CRC):
     
     return [False, tracker_ID]
 
+
+# decrypts AES encrypted payload given key
+# returns 
+#   decrypted payload if decryption is successful
+#   original payload if decryption is unsucessful (due to passing inaccurate encrypted payload probably caused by interference)
+def decryptPayload(payload, key):
+    try:
+        payload = payload[4:-1] #discard \xff\xff\x00\x00 in the beginning and \x00 at the end
+        payload = bytes(payload).decode("utf-8",'ignore')
+        cipher = AES.new(key)
+        decoded = base64.b64decode(payload)
+        decrypted = cipher.decrypt(decoded)
+        decrypted_payload = bytes(decrypted).decode("utf-8",'ignore').strip()
+        print(payload)
+        return decrypted_payload
+    except:
+        return payload

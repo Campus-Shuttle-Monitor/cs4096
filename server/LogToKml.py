@@ -2,7 +2,7 @@
 #To execute: python3 LogToKml.py <log_file> <desired_kml_file_name>
 
 import sys
-from parseNMEA import parseNMEA
+from parse import parseNMEA
 import simplekml
 
 #set up variables to build kml file that will map coordinates on Google Earth
