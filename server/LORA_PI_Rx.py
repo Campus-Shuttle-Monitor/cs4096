@@ -56,7 +56,7 @@ class LoRaRcvCont(LoRa):
                 coord_data = parse.parseNMEA(decoded_payload[NMEA_start_index:])
                 #if received NMEA coordinates pass checksum
                 if coord_data[0]:
-                    tup = tuple(coord_data[1:])
+                    tup = tuple(coord_data[1:3])
                     kml.newpoint(coords=[tup])
                     coordList.append(tup)
                     print("sucessfully parsed and logged")

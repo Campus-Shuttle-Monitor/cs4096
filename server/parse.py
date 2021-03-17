@@ -4,11 +4,12 @@ from Crypto.Cipher import AES
 import base64
 
 # parses NMEA sentence
-# returns [num_parsed_sentences, longitude, latitude] where 
-# longitude and latitude are in degree decmimal format
+# returns [num_parsed_sentences, longitude, latitude, UTC_timestamp] where 
 # num_parsed_sentences is 
 #   1 if sentence was able to pass base sentence catcher with clean CRC,
 #   0 if sentence was not able to pass with clean CRC
+# longitude and latitude are in degree decmimal format
+# UTC_timestamp is a tuple in the form (hours, minutes, seconds)
 def parseNMEA(sentence):
     gps = MicropyGPS()
     for x in sentence:
@@ -27,7 +28,7 @@ def parseNMEA(sentence):
     else:
         lat = lat[0] + lat[1]/60
 
-    return [gps.parsed_sentences, lon, lat]
+    return [gps.parsed_sentences, lon, lat, gps.timestamp]
 
 
 # parses trackerID and validates checksum
