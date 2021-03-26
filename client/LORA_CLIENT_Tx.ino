@@ -20,8 +20,8 @@
 #define RFM95_RST 9 //RST of Lora connected to pin 9
 #define RFM95_INT 2 //INT of Lora connected to pin 2
 
-// Change to 434.0 or other frequency, must match RX's freq!
-#define RF95_FREQ 434.0
+// Change to 915.0 or other frequency, must match RX's freq!
+#define RF95_FREQ 915.0
 
 // Singleton instance of the radio driver
 RH_RF95 rf95(RFM95_CS, RFM95_INT);
@@ -59,7 +59,7 @@ void setup()
   }
   
 
- //Set the default frequency 434.0MHz
+ //Set the default frequency 915.0MHz
   if (!rf95.setFrequency(RF95_FREQ)) {
     Serial.println("setFrequency failed");
     while (1);

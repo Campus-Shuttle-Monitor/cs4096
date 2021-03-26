@@ -86,6 +86,7 @@ if __name__ == '__main__':
 
         logging.info('-------------- PROGRAM START --------------')
 
+        lora.set_freq(915.0)
         lora.start()
     except KeyboardInterrupt:
         sys.stdout.flush()
