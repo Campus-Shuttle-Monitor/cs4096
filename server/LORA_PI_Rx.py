@@ -4,6 +4,7 @@ from SX127x.board_config import BOARD
 import logging
 import parse
 import simplekml
+import requests
 
 #name of kml and logger file
 NAME = ""
@@ -14,6 +15,8 @@ logger = logging.Logger
 #set up variables to build kml file that will map coordinates on Google Earth
 coordList = []
 kml = simplekml.Kml()
+
+URL = 'https://realtime-location-gateway-waz932k.uc.gateway.dev/shuttle/1'
 
 BOARD.setup()
 
@@ -60,6 +63,17 @@ class LoRaRcvCont(LoRa):
                     kml.newpoint(coords=[tup])
                     coordList.append(tup)
                     print("sucessfully parsed and logged")
+                    body = {
+                        'longitude': coord_data[1],
+                        'latitude': coord_data[2]
+                        #'time': coord_data[3]
+                    }
+                    resp = requests.post(URL, data=body)
+                    if resp.status_code < 300:
+                        logging.info('Data sent successfully!')
+                    else:
+                        logging.info('Request failed with status: {} and message: {}'.format(resp.status_code, resp.text))
+
 
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
