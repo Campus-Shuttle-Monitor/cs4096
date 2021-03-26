@@ -42,7 +42,7 @@ void setup()
 //Initialize Serial Monitor
   Serial.begin(9600);
   
-  wdt_enable(WDTO_8S); //enabling watchdog timer so Uno resets if program hangs
+  wdt_enable(WDTO_4S); //enabling watchdog timer so Uno resets if program hangs
   Serial.println("Start Program");
   
 // Reset LoRa Module 
@@ -109,10 +109,10 @@ void loop() {
                 Serial.print("Transmission Time: ");
                 Serial.print(stopTime-startTime);
                 Serial.println("ms");
-                Serial.println("Delaying for 10 seconds now\n");
-                delay(5000);
+                Serial.println("Delaying for 3 seconds now\n");
+                delay(1500);
                 wdt_reset();
-                delay(5000);
+                delay(1500);
             }
             else {
                 String tracker_coord = TRACKER_ID_CRC + NMEA_coordinates + padding;
@@ -131,11 +131,11 @@ void loop() {
                 Serial.print("\nTransmission Time: ");
                 Serial.print(stopTime-startTime);
                 Serial.println("ms");
-                Serial.println("Sent. Delaying for 10 seconds now\n");
+                Serial.println("Sent. Delaying for 3 seconds now\n");
                 
-                delay(5000);
+                delay(1500);
                 wdt_reset();
-                delay(5000);
+                delay(1500);
             }
         }
 
