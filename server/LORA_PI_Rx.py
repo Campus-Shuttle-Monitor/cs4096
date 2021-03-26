@@ -70,8 +70,10 @@ class LoRaRcvCont(LoRa):
                     }
                     resp = requests.post(URL, data=body)
                     if resp.status_code < 300:
+                        print('Data sent to server successfully!')
                         logging.info('Data sent successfully!')
                     else:
+                        print('Request failed with status: {} and message: {}'.format(resp.status_code, resp.text))
                         logging.info('Request failed with status: {} and message: {}'.format(resp.status_code, resp.text))
 
 
