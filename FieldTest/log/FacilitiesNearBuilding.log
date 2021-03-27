@@ -1,0 +1,438 @@
+2021-03-27 12:39:59 INFO     -------------- PROGRAM START --------------
+2021-03-27 12:40:02 INFO     IO92*26$GPGLL,3757.44551,N,09146.80556,W,174001.00,A,D*7E
+2021-03-27 12:40:02 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:02 INFO     Data sent successfully!
+2021-03-27 12:40:06 INFO     IO92*26$GPGLL,3757.44529,N,09146.80576,W,174005.00,A,D*77
+2021-03-27 12:40:06 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:06 INFO     Data sent successfully!
+2021-03-27 12:40:10 INFO     IO92*26$GPGLL,3757.44464,N,09146.80583,W,174009.00,A,D*79
+2021-03-27 12:40:10 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:10 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:10 INFO     Data sent successfully!
+2021-03-27 12:40:14 INFO     IO92*26$GPGLL,3757.44281,N,09146.80625,W,174013.00,A,D*70
+2021-03-27 12:40:14 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:14 INFO     Data sent successfully!
+2021-03-27 12:40:18 INFO     IO92*26$GPGLL,3757.44268,N,09146.80611,W,174017.00,A,D*74
+2021-03-27 12:40:18 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:18 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:18 INFO     Data sent successfully!
+2021-03-27 12:40:22 INFO     IO92*26$GPGLL,3757.44324,N,09146.80818,W,174021.00,A,D*7F
+2021-03-27 12:40:22 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:23 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:23 INFO     Data sent successfully!
+2021-03-27 12:40:26 INFO     IO92*26$GPGLL,3757.44310,N,09146.81642,W,174025.00,A,D*7C
+2021-03-27 12:40:26 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:31 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:31 INFO     Data sent successfully!
+2021-03-27 12:40:31 INFO     
+2021-03-27 12:40:34 INFO     IO92*26$GPGLL,3757.44216,N,09146.84248,W,174033.00,A,D*77
+2021-03-27 12:40:34 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:34 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:34 INFO     Data sent successfully!
+2021-03-27 12:40:38 INFO     IO92*26$GPGLL,3757.44888,N,09146.85049,W,174037.00,A,D*7C
+2021-03-27 12:40:38 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:38 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:38 INFO     Data sent successfully!
+2021-03-27 12:40:42 INFO     IO92*26$GPGLL,3757.46032,N,09146.85239,W,174041.00,A,D*73
+2021-03-27 12:40:42 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:42 INFO     Data sent successfully!
+2021-03-27 12:40:46 INFO     IO92*26$GPGLL,3757.47341,N,09146.85437,W,174045.00,A,D*79
+2021-03-27 12:40:46 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:46 INFO     Data sent successfully!
+2021-03-27 12:40:50 INFO     IO92*26$GPGLL,3757.48423,N,09146.85917,W,174049.00,A,D*76
+2021-03-27 12:40:50 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:50 INFO     Data sent successfully!
+2021-03-27 12:40:54 INFO     IO92*26$GPGLL,3757.49520,N,09146.86850,W,174053.00,A,D*7F
+2021-03-27 12:40:54 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:54 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:54 INFO     Data sent successfully!
+2021-03-27 12:40:58 INFO     IO92*26$GPGLL,3757.50684,N,09146.88108,W,174057.00,A,D*74
+2021-03-27 12:40:58 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:40:58 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:40:58 INFO     Data sent successfully!
+2021-03-27 12:41:02 INFO     IO92*26$GPGLL,3757.51584,N,09146.89255,W,174101.00,A,D*7E
+2021-03-27 12:41:02 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:02 INFO     Data sent successfully!
+2021-03-27 12:41:06 INFO     IO92*26$GPGLL,3757.52223,N,09146.89777,W,174105.00,A,D*76
+2021-03-27 12:41:06 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:06 INFO     Data sent successfully!
+2021-03-27 12:41:09 INFO     IO92*26$GPGLL,3757.52433,N,09146.88849,W,174109.00,A,D*7E
+2021-03-27 12:41:10 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:10 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:10 INFO     Data sent successfully!
+2021-03-27 12:41:13 INFO     IO92*26$GPGLL,3757.52407,N,09146.86835,W,174113.00,A,D*77
+2021-03-27 12:41:14 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:14 INFO     Data sent successfully!
+2021-03-27 12:41:16 INFO     AI綁S9Fảb>#)ʷ=-2;bÌ2',eՇ4{gx<Rb4pua,8v<(vcǩE٩*=a eTGs(Oyt4T6aprUxGGs0izхf]&%_ZQyn9J
+2021-03-27 12:41:17 INFO     IO92*26$GPGLL,3757.52433,N,09146.84508,W,174117.00,A,D*75
+2021-03-27 12:41:17 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:18 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:18 INFO     Data sent successfully!
+2021-03-27 12:41:21 INFO     IO92*26$GPGLL,3757.52709,N,09146.82362,W,174121.00,A,D*76
+2021-03-27 12:41:21 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:23 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:23 INFO     Data sent successfully!
+2021-03-27 12:41:25 INFO     IO92*26$GPGLL,3757.53143,N,09146.80090,W,174125.00,A,D*77
+2021-03-27 12:41:25 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:26 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:26 INFO     Data sent successfully!
+2021-03-27 12:41:29 INFO     IO92*26$GPGLL,3757.53407,N,09146.77673,W,174129.00,A,D*7D
+2021-03-27 12:41:29 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:32 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:32 INFO     Data sent successfully!
+2021-03-27 12:41:33 INFO     wVLODClmEw4ZbAhHbYXqsrrpllMiujnc4p/QmCsy35hGoPjhkDxrMsf3kIR8fIST74/23TtRIYHFN0kGVdZ]7=
+2021-03-27 12:41:37 INFO     wVLODClmEw4ZbAhHbYXqsha6ii1uD1nfKOl0zftbUadSK57BZO9FpGQ19RSmz4HP74/23TtRI9N0kGVdZnoQ==
+2021-03-27 12:41:41 INFO     IO92*26$GPGLL,3757.55682,N,09146.74418,W,174141.00,A,D*76
+2021-03-27 12:41:41 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:42 INFO     Data sent successfully!
+2021-03-27 12:41:45 INFO     IO92*26$GPGLL,3757.56114,N,09146.75123,W,174145.00,A,D*75
+2021-03-27 12:41:45 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:41:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:41:46 INFO     Data sent successfully!
+2021-03-27 12:41:49 INFO     wVLMfC.Q0%jQAqbCXtVaUe5DtJAmckzu7n6JCv5FXiVfMpfK44IjmZRj74/23TtRIYHFN0kGVdZnoQ==
+2021-03-27 12:41:53 INFO     wVLCidLPZbqkhBYXqsu6xPCAlG+4lEBCsOzCmgjdiC3ysxOkecvnRRqMFnfpWhX4vyB9UjbJ5qflafrPrxw==
+2021-03-27 12:41:57 INFO     wVLODClmEw4ZbAhHbYXqsjGsiG9QOkItqy.nEӓ4CgBimmATaYX4A+PA47p8ZRCR0yriehGIXjoBVQlRTg==
+2021-03-27 12:42:01 INFO     wVLODClmEw4ZbJHjYXqshHzWX6vFop6dvBEHtdzBVPbQqo1a53RzAu4lo0GxagJ6sS6gjzlxCR2stjQ15BiaQ==
+2021-03-27 12:42:05 INFO     IO92*26$GPGLL,3757.55436,N,09146.80062,W,174205.00,A,A*7F
+2021-03-27 12:42:05 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:07 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:07 INFO     Data sent successfully!
+2021-03-27 12:42:09 INFO     IO92*26$GPGLL,3757.54471,N,09146.80134,W,174209.00,A,A*73
+2021-03-27 12:42:09 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:10 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:10 INFO     Data sent successfully!
+2021-03-27 12:42:13 INFO     IO92*26$GPGLL,3757.53782,N,09146.80209,W,174213.00,A,A*7D
+2021-03-27 12:42:13 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:14 INFO     Data sent successfully!
+2021-03-27 12:42:17 INFO     IO92*26$GPGLL,3757.53672,N,09146.80255,W,174217.00,A,D*7B
+2021-03-27 12:42:17 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:18 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:18 INFO     Data sent successfully!
+2021-03-27 12:42:21 INFO     IO92*26$GPGLL,3757.53654,N,09146.80314,W,174221.00,A,D*7E
+2021-03-27 12:42:21 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:22 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:22 INFO     Data sent successfully!
+2021-03-27 12:42:25 INFO     IO92*26$GPGLL,3757.53627,N,09146.80290,W,174225.00,A,D*73
+2021-03-27 12:42:25 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:26 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:26 INFO     Data sent successfully!
+2021-03-27 12:42:29 INFO     IO92*26$GPGLL,3757.53621,N,09146.80265,W,174229.00,A,D*73
+2021-03-27 12:42:29 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:30 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:30 INFO     Data sent successfully!
+2021-03-27 12:42:33 INFO     IO92*26$GPGLL,3757.53604,N,09146.80294,W,174233.00,A,D*71
+2021-03-27 12:42:33 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:34 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:34 INFO     Data sent successfully!
+2021-03-27 12:42:37 INFO     IO92*26$GPGLL,3757.53594,N,09146.80302,W,174237.00,A,D*71
+2021-03-27 12:42:37 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:38 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:38 INFO     Data sent successfully!
+2021-03-27 12:42:41 INFO     wVLODClmEw4ZbAhHbYXq%D_`7vdB9/jP2rRVfhf0B/SN64KQp7ElNPoW4Pz6sS6gjzlxCR2stjQ15BiaQ==
+2021-03-27 12:42:45 INFO     IO92*26$GPGLL,3757.53120,N,09146.80876,W,174245.00,A,D*77
+2021-03-27 12:42:45 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:46 INFO     Data sent successfully!
+2021-03-27 12:42:49 INFO     IO92*26$GPGLL,3757.52819,N,09146.82361,W,174249.00,A,D*76
+2021-03-27 12:42:49 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:50 INFO     Data sent successfully!
+2021-03-27 12:42:53 INFO     IO92*26$GPGLL,3757.52570,N,09146.84603,W,174253.00,A,D*78
+2021-03-27 12:42:53 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:42:54 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:42:54 INFO     Data sent successfully!
+2021-03-27 12:42:57 INFO     wVLODClmEw4ZbAhHbYXqsoc+5CV96djtB/rut6nWl2IuwsWCJ4y6VqyjZ1qPcrbw3DuImCgMZu7K4SohPQ/tg==
+2021-03-27 12:43:01 INFO     IO92*26$GPGLL,3757.52504,N,09146.89589,W,174301.00,A,D*71
+2021-03-27 12:43:01 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:02 INFO     Data sent successfully!
+2021-03-27 12:43:05 INFO     IO92*26$GPGLL,3757.52505,N,09146.91666,W,174305.00,A,D*7F
+2021-03-27 12:43:05 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:06 INFO     Data sent successfully!
+2021-03-27 12:43:17 INFO     wVLODClmEw4ZbAhHbYXqspnXU7A2M6I5MXMukAgHd2y+1juQklkbXme6ulv5BK9+Zd/LU+kjtZt70PHKPSvLmw=9
+2021-03-27 12:43:21 INFO     wVLODClmEw4ZbC(H&e`S9B4YaqzSYLW7/QWfQEP+fJwV2m8XfnKuJ15+bEXhbj0HDNZty5lzt/bz9Qmg==
+2021-03-27 12:43:25 INFO     IO92*26$GPGLL,3757.51824,N,09146.94918,W,174325.00,A,A*76
+2021-03-27 12:43:25 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:26 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:26 INFO     Data sent successfully!
+2021-03-27 12:43:29 INFO     IO92*26$GPGLL,3757.50028,N,09146.95358,W,174329.00,A,D*75
+2021-03-27 12:43:29 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:31 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:31 INFO     Data sent successfully!
+2021-03-27 12:43:33 INFO     IO92*26$GPGLL,3757.47659,N,09146.95842,W,174333.00,A,D*78
+2021-03-27 12:43:33 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:34 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:34 INFO     Data sent successfully!
+2021-03-27 12:43:37 INFO     IO92*26$GPGLL,3757.45263,N,09146.96394,W,174337.00,A,D*70
+2021-03-27 12:43:37 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:38 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:38 INFO     Data sent successfully!
+2021-03-27 12:43:41 INFO     IO92*26$GPGLL,3757.43375,N,09146.96893,W,174341.00,A,D*7D
+2021-03-27 12:43:41 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:42 INFO     Data sent successfully!
+2021-03-27 12:43:45 INFO     IO92*26$GPGLL,3757.42189,N,09146.97735,W,174345.00,A,D*7B
+2021-03-27 12:43:45 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:46 INFO     Data sent successfully!
+2021-03-27 12:43:49 INFO     IO92*26$GPGLL,3757.41094,N,09146.98527,W,174349.00,A,D*77
+2021-03-27 12:43:49 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:50 INFO     Data sent successfully!
+2021-03-27 12:43:53 INFO     IO92*26$GPGLL,3757.40009,N,09146.97786,W,174353.00,A,D*7F
+2021-03-27 12:43:53 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:54 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:54 INFO     Data sent successfully!
+2021-03-27 12:43:57 INFO     IO92*26$GPGLL,3757.39209,N,09146.96007,W,174357.00,A,D*78
+2021-03-27 12:43:57 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:43:58 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:43:58 INFO     Data sent successfully!
+2021-03-27 12:44:01 INFO     IO92*26$GPGLL,3757.37968,N,09146.93903,W,174401.00,A,D*76
+2021-03-27 12:44:01 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:02 INFO     Data sent successfully!
+2021-03-27 12:44:05 INFO     IO92*26$GPGLL,3757.36501,N,09146.91582,W,174405.00,A,D*77
+2021-03-27 12:44:05 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:06 INFO     Data sent successfully!
+2021-03-27 12:44:09 INFO     IO92*26$GPGLL,3757.34944,N,09146.89127,W,174409.00,A,D*76
+2021-03-27 12:44:09 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:10 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:10 INFO     Data sent successfully!
+2021-03-27 12:44:13 INFO     IO92*26$GPGLL,3757.33244,N,09146.86471,W,174413.00,A,D*78
+2021-03-27 12:44:13 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:14 INFO     Data sent successfully!
+2021-03-27 12:44:17 INFO     IO92*26$GPGLL,3757.31838,N,09146.82863,W,174417.00,A,D*74
+2021-03-27 12:44:17 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:18 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:18 INFO     Data sent successfully!
+2021-03-27 12:44:21 INFO     IO92*26$GPGLL,3757.30882,N,09146.78645,W,174421.00,A,D*7E
+2021-03-27 12:44:21 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:27 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:27 INFO     Data sent successfully!
+2021-03-27 12:44:27 INFO     
+2021-03-27 12:44:29 INFO     wVLODClmEw4ZbAhHbYXqsmWJPKh
+_i0y~>pn9mGw9l8euU2kqkq7P/uNRAh
+76zۓHFg==
+2021-03-27 12:44:33 INFO     IO92*26$GPGLL,3757.30727,N,09146.66960,W,174433.00,A,D*7A
+2021-03-27 12:44:33 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:34 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:34 INFO     Data sent successfully!
+2021-03-27 12:44:37 INFO     wVLH<RIQAhHbYXqsr4tM8tOlhjtA5GWRs7U2+122WC9vsnBPdsdrUEDAEbUYJaXqB8poo5sBhzpa+Cw=
+2021-03-27 12:44:41 INFO     IO92*26$GPGLL,3757.30728,N,09146.63890,W,174441.00,A,D*7B
+2021-03-27 12:44:41 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:42 INFO     Data sent successfully!
+2021-03-27 12:44:45 INFO     IO92*26$GPGLL,3757.30720,N,09146.63859,W,174445.00,A,D*72
+2021-03-27 12:44:45 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:46 INFO     Data sent successfully!
+2021-03-27 12:44:49 INFO     IO92*26$GPGLL,3757.30725,N,09146.63872,W,174449.00,A,D*72
+2021-03-27 12:44:49 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:50 INFO     Data sent successfully!
+2021-03-27 12:44:53 INFO     IO92*26$GPGLL,3757.30722,N,09146.63893,W,174453.00,A,D*71
+2021-03-27 12:44:53 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:54 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:54 INFO     Data sent successfully!
+2021-03-27 12:44:57 INFO     IO92*26$GPGLL,3757.30702,N,09146.63922,W,174457.00,A,D*7C
+2021-03-27 12:44:57 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:44:58 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:44:58 INFO     Data sent successfully!
+2021-03-27 12:45:01 INFO     IO92*26$GPGLL,3757.30697,N,09146.63951,W,174501.00,A,D*77
+2021-03-27 12:45:01 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:45:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:45:02 INFO     Data sent successfully!
+2021-03-27 12:45:05 INFO     IO92*26$GPGLL,3757.30698,N,09146.63962,W,174505.00,A,D*7C
+2021-03-27 12:45:05 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:45:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:45:06 INFO     Data sent successfully!
+2021-03-27 12:45:09 INFO     IO92*26$GPGLL,3757.30696,N,09146.63937,W,174509.00,A,D*7E
+2021-03-27 12:45:09 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:45:10 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:45:10 INFO     Data sent successfully!
+2021-03-27 12:45:21 INFO     IO92*26$GPGLL,3757.29978,N,09146.63052,W,174521.00,A,D*79
+2021-03-27 12:45:21 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:45:28 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:45:28 INFO     Data sent successfully!
+2021-03-27 12:45:28 INFO     
+2021-03-27 12:45:29 INFO     DSOODClmEw4ZbAhHbYXqqb3Y9RCKbj8VQ69LSbtleV+b1Oa9vUZL5roeY2AL7vdOArWyqKPf+1+SVcEkT~bQ>=
+2021-03-27 12:45:41 INFO     wVLODClmEw4ZbAhHbQ[jITPJMjAGDwKmAnJ47+B+r9aJrBktWww8pT5FP26aApO4q1Fp9nbQ2mm6sEjy3bw==
+2021-03-27 12:45:49 INFO     wH%2_bBhHbYXqsgwj[o1aǹ};qA,VGdRVcGjJ7bq+XYaBYKdwAiY||`Ϩ6w1
+3r8BrLg==
+2021-03-27 12:45:53 INFO     ;
+!Vo}Tw4ZbAhHbYXqslXWVO6MMjA4KR+bN1HCV]2KhWK8w(FCFoDl+rRlHGnmҴ6b
+2021-03-27 12:46:05 INFO     wVMOClmLw4ZbahJBqxVe]L8wISGG&+ӽ5~K"`9%vh#"=]< ߪJ
+2021-03-27 12:46:33 INFO     wVLODClmEw4ZbAhyi1\f2SnotnT1DrSbx/jehJuOOCEAXEaGSERx9q6sS6gjzlxCR2stjQ15BiaQ==
+2021-03-27 12:47:01 INFO     wVLODCl=EwHd7h<vhQ%30ӆPy	q(~
+{UZpHJrĜ
+?ai,
+2021-03-27 12:49:02 INFO     wVLODClmEw%Kc@xHbq@ygQNL'wY[lIKUX5qv/W8UwcWqbJuXmSZRCR0yriehGIXjoBVQlRTg==
+2021-03-27 12:49:46 INFO     wVL
+%t4ZbXYQ!zgb1Ay&TOQupnCtawIehK[Aptz582U51QyhdTf2bOhX4vyB9UjbJ5qflafrPrxw==
+2021-03-27 12:50:14 INFO     wVLODC|Aj)3׵<qN
+0V$yraQEsv4.@h(]"a+_
+VbuSSb-|!adk~X+BwN@=
+2021-03-27 12:50:18 INFO     wVLODClmEw6zbA.OZcS\[c3BkP{޻N61Vj~Zhc+IZUjF,fU
+	
+ӓ6Qg==
+2021-03-27 12:50:22 INFO     wVLODClmEw4ZbAhHbYX!snoS4rx/7gPRqL4TjpDoFB5QB+c7HhZ35AWY1QRtXY&lhcg]l8YnW//qOEvdQ==
+2021-03-27 12:50:26 INFO     wLO$ClmG-ܢ}jx6eBQLgLSqs7|`tcAfIGH/m7rZwGYFlg]m)RtRJYHFN0kGVdZnoQ==
+2021-03-27 12:50:34 INFO     IO92*26$GPGLL,3757.19960,N,09146.61718,W,175033.00,A,D*7F
+2021-03-27 12:50:34 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:50:35 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:50:35 INFO     Data sent successfully!
+2021-03-27 12:50:38 INFO     IO92*26$GPGLL,3757.19960,N,09146.61727,W,175037.00,A,D*77
+2021-03-27 12:50:38 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:50:38 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:50:38 INFO     Data sent successfully!
+2021-03-27 12:50:42 INFO     IO92*26$GPGLL,3757.19965,N,09146.61733,W,175041.00,A,D*76
+2021-03-27 12:50:42 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:50:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:50:42 INFO     Data sent successfully!
+2021-03-27 12:51:02 INFO     wVLODClmEw4ZbAhHbYXqss8ipWlOeGcur2oqWBgvYpTZ3hKZVlmAyLrmWzzo9GaG3DuImCVgAZ1M4SohPQ/tg==
+2021-03-27 12:51:06 INFO     wVLODClmEw4ZbAhHb[Xqsn2WbB5Klbeky+Dîh!cZqluxyD /4lhAiYtlqfBq3w1ngStr8BrLg==
+2021-03-27 12:51:10 INFO     IO92*26$GPGLL,3757.29441,N,09146.62591,W,175109.00,A,D*7A
+2021-03-27 12:51:10 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:51:11 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:51:11 INFO     Data sent successfully!
+2021-03-27 12:51:14 INFO     IO92*26$GPGLL,3757.30006,N,09146.62586,W,175113.00,A,D*78
+2021-03-27 12:51:14 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:51:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:51:14 INFO     Data sent successfully!
+2021-03-27 12:51:18 INFO     wVLODClmEw4ZbLuoMWOgmH2Tun7mGbOirwP3Tf1P6+QfCEqJvM2pCdUECdiulqAiawJl8YnW//qOEvdQ==
+2021-03-27 12:51:34 INFO     wVLODCeӬ?NzmzX9rA=ywg6qUpQzSB1rKOoOYQ80Xbq2/am0vwZXkEhm6sS6gjzlxCR2stjQ15BiaQ==
+2021-03-27 12:51:38 INFO     IO92*26$GPGLL,3757.31388,N,09146.75932,W,175137.00,A,D*7F
+2021-03-27 12:51:38 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:51:39 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:51:39 INFO     Data sent successfully!
+2021-03-27 12:51:42 INFO     IO92*26$GPGLL,3757.31606,N,09146.79610,W,175141.00,A,D*7E
+2021-03-27 12:51:42 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:51:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:51:42 INFO     Data sent successfully!
+2021-03-27 12:51:46 INFO     IO92*26$GPGLL,3757.32438,N,09146.83053,W,175145.00,A,D*72
+2021-03-27 12:51:46 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:51:48 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:51:48 INFO     Data sent successfully!
+2021-03-27 12:51:50 INFO     IO92*26$GPGLL,3757.33615,N,09146.86244,W,175149.00,A,D*73
+2021-03-27 12:51:50 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:51:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:51:50 INFO     Data sent successfully!
+2021-03-27 12:51:54 INFO     wVLODClmEw4ZbAhHbYXqstx4YE1osB6LbmX4iV9ylgSkd2HPDDNwiLMkuNKwffIbUZJRXqB8poo5sBhzpa+Cw==
+2021-03-27 12:51:58 INFO     wVLODClmEw4ZbAhLbi]qsta17OmWnW0mNgciGlfgRHIoH0Kk9eTPNGV8Qdsqt33GEg/eZB/nyDUMRY9VZYj0+A==
+2021-03-27 12:52:02 INFO     IO92*26$GPGLL,3757.38295,N,09146.93759,W,175201.00,A,D*76
+2021-03-27 12:52:02 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:02 INFO     Data sent successfully!
+2021-03-27 12:52:06 INFO     IO92*26$GPGLL,3757.39408,N,09146.95273,W,175205.00,A,D*7A
+2021-03-27 12:52:06 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:06 INFO     Data sent successfully!
+2021-03-27 12:52:10 INFO     IO92*26$GPGLL,3757.40672,N,09146.95838,W,175209.00,A,D*72
+2021-03-27 12:52:10 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:10 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:10 INFO     Data sent successfully!
+2021-03-27 12:52:14 INFO     IO92*26$GPGLL,3757.42042,N,09146.96369,W,175213.00,A,D*72
+2021-03-27 12:52:14 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:14 INFO     Data sent successfully!
+2021-03-27 12:52:18 INFO     IO92*26$GPGLL,3757.43608,N,09146.96491,W,175217.00,A,D*7F
+2021-03-27 12:52:18 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:19 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:19 INFO     Data sent successfully!
+2021-03-27 12:52:22 INFO     IO92*26$GPGLL,3757.45769,N,09146.96024,W,175221.00,A,D*70
+2021-03-27 12:52:22 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:22 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:22 INFO     Data sent successfully!
+2021-03-27 12:52:26 INFO     wVLODClmEw4ZbAhHbYXqsr2GZ1ibHx9r47542pC5z4JAe6PCUNA7twKGLq8yTludOArWyqKPf+1+SVcEkTNcQ==
+2021-03-27 12:52:30 INFO     wVLODClmEw4ZbAhHbYXqsvhZ+wU/GIeqHGU7qsvXfVjpufJLVhi8cpP4R6sIfr9AZRCR0yriehGIX:?GVQlRTg==
+2021-03-27 12:52:34 INFO     IO92*26$GPGLL,3757.51904,N,09146.94773,W,175233.00,A,D*74
+2021-03-27 12:52:34 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:34 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:34 INFO     Data sent successfully!
+2021-03-27 12:52:38 INFO     ~ODClmEw4ZbAhHbYXqstR+qCVJGMuiMKuLRRVJ1qTs9MM7aoYG/8cxz/62VliulqAiawJl8YnW//qOEW=
+2021-03-27 12:52:42 INFO     IO92*26$GPGLL,3757.52495,N,09146.92040,W,175241.00,A,D*76
+2021-03-27 12:52:42 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:42 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:42 INFO     Data sent successfully!
+2021-03-27 12:52:46 INFO     IO92*26$GPGLL,3757.52481,N,09146.89830,W,175245.00,A,D*72
+2021-03-27 12:52:46 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:46 INFO     Data sent successfully!
+2021-03-27 12:52:50 INFO     IO92*26$GPGLL,3757.52464,N,09146.87594,W,175249.00,A,D*78
+2021-03-27 12:52:50 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:50 INFO     Data sent successfully!
+2021-03-27 12:52:53 INFO     wVLODClmEw4ZbAhHbYXqshuYtGuTdRG6OpEGGWxEihWIQqe/7Yp1QbtYDtdvoopEg/eZB/nyDUMRY9VZYj0+A==
+2021-03-27 12:52:57 INFO     IO92*26$GPGLL,3757.52534,N,09146.83200,W,175257.00,A,D*7D
+2021-03-27 12:52:58 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:52:58 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:52:58 INFO     Data sent successfully!
+2021-03-27 12:53:02 INFO     IO92*26$GPGLL,3757.52959,N,09146.81052,W,175301.00,A,D*7F
+2021-03-27 12:53:02 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:02 INFO     Data sent successfully!
+2021-03-27 12:53:05 INFO     IO92*26$GPGLL,3757.53276,N,09146.78679,W,175305.00,A,D*75
+2021-03-27 12:53:06 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:06 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:06 INFO     Data sent successfully!
+2021-03-27 12:53:09 INFO     wVLODClmEw4ZbAhHbYXqsrv2GZvXduTzlssUeBJLRlpuTrMi9daHNKB4dvYmlMqLEg'Ry)DUMRY9VZYj0+A==
+2021-03-27 12:53:13 INFO     IO92*26$GPGLL,3757.54307,N,09146.74660,W,175313.00,A,D*76
+2021-03-27 12:53:13 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:14 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:14 INFO     Data sent successfully!
+2021-03-27 12:53:17 INFO     IO92*26$GPGLL,3757.55549,N,09146.74295,W,175317.00,A,D*71
+2021-03-27 12:53:17 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:19 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:19 INFO     Data sent successfully!
+2021-03-27 12:53:21 INFO     IO92*26$GPGLL,3757.56104,N,09146.75095,W,175321.00,A,D*79
+2021-03-27 12:53:21 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:23 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:23 INFO     Data sent successfully!
+2021-03-27 12:53:25 INFO     EoODClmEw4ZbAhHbYXqsgehnCm/6HDvVyyrywrb1rD36mLDajoWNgw/aGO>374/23TtRIYHFN0kGZd\n=
+2021-03-27 12:53:33 INFO     IO92*26$GPGLL,3757.56189,N,09146.78922,W,175333.00,A,D*77
+2021-03-27 12:53:33 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:34 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:34 INFO     Data sent successfully!
+2021-03-27 12:53:37 INFO     IO92*26$GPGLL,3757.55845,N,09146.79856,W,175337.00,A,D*7A
+2021-03-27 12:53:37 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:38 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:38 INFO     Data sent successfully!
+2021-03-27 12:53:41 INFO     IO92*26$GPGLL,3757.54990,N,09146.80045,W,175341.00,A,D*7F
+2021-03-27 12:53:41 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:43 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:43 INFO     Data sent successfully!
+2021-03-27 12:53:45 INFO     IO92*26$GPGLL,3757.54135,N,09146.80064,W,175345.00,A,D*7F
+2021-03-27 12:53:45 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:46 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:46 INFO     Data sent successfully!
+2021-03-27 12:53:49 INFO     IO92*26$GPGLL,3757.53741,N,09146.80067,W,175349.00,A,D*72
+2021-03-27 12:53:49 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:50 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:50 INFO     Data sent successfully!
+2021-03-27 12:53:53 INFO     IO92*26$GPGLL,3757.53696,N,09146.80089,W,175353.00,A,D*72
+2021-03-27 12:53:53 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:54 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:54 INFO     Data sent successfully!
+2021-03-27 12:53:57 INFO     IO92*26$GPGLL,3757.53662,N,09146.80121,W,175357.00,A,D*7E
+2021-03-27 12:53:57 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:53:58 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:53:58 INFO     Data sent successfully!
+2021-03-27 12:54:01 INFO     IO92*26$GPGLL,3757.53612,N,09146.80147,W,175401.00,A,D*7D
+2021-03-27 12:54:01 DEBUG    Starting new HTTPS connection (1): realtime-location-gateway-waz932k.uc.gateway.dev:443
+2021-03-27 12:54:02 DEBUG    https://realtime-location-gateway-waz932k.uc.gateway.dev:443 "POST /shuttle/1 HTTP/1.1" 200 8
+2021-03-27 12:54:02 INFO     Data sent successfully!
+2021-03-27 12:54:03 INFO     --------------- PROGRAM END ---------------
