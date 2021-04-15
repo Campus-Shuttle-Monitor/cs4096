@@ -144,7 +144,13 @@ git clone https://github.com/Campus-Shuttle-Monitor/cs4096.git
 
 ### RPi
 
-Navigate to the **server** directory in the command line and run the following command:
+Navigate to the **server** directory in the command line and set the AES_KEY environment variable. This key will be used to decrypt the radio packet and must be exactly 16 characters. Make sure that it matches the key that the Uno uses to encrypt the radio packet. You can set an example key by running the following on the command line:
+
+```
+export AES_KEY="ExampleAESKeyTst"
+```
+
+Once the AES key is set, you can run the following command to start the server:
 
 ```
 python3 LORA_PI_Rx.py
@@ -154,7 +160,13 @@ You'll be prompted to name the logger and kml files. This is for field testing p
 
 ### Uno
 
-Navigate to the **client** directory and open the **LORA_CLIENT_Tx.ino** sketch. _Disconnect_ the GPS's Tx connection to the Uno's Rx pin. Upload the sketch to the Uno. Once the upload is complete, _reconnect_ the GPS's Tx pin to the Uno's Rx pin. The reason for the disconnection and reconnection is due to the Uno using its own Tx and Rx pins to serially upload the sketch to the microcontroller. Once upload is complete, those pins can be used for serial communication with other devices. Make sure the Serial monitor's baud rate is set to 9600.
+Navigate to the **client** directory. You must create a file named **AES_KEY.h** in this directory. This is where you will define an AES key to encrypt the radio packet. This key must be exactly 16 characters and must match the key that the RPi uses to decrypt the radio packet. You can set an example key by including the following in your AES_KEY.h file:
+
+```
+#define AES_KEY "ExampleAESKeyTst"
+```
+
+Once you've saved the file, open the **LORA_CLIENT_Tx.ino** sketch in the Arduino IDE. _Disconnect_ the GPS's Tx connection to the Uno's Rx pin. Upload the sketch to the Uno. Once the upload is complete, _reconnect_ the GPS's Tx pin to the Uno's Rx pin. The reason for the disconnection and reconnection is due to the Uno using its own Tx and Rx pins to serially upload the sketch to the microcontroller. Once upload is complete, those pins can be used for serial communication with other devices. Make sure the Serial monitor's baud rate is set to 9600.
 
 ### Results
 
