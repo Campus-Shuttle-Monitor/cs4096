@@ -4,6 +4,7 @@
 #include "CRC8.h" //Checksum generator from CRC Library
 #include <AESLib.h> //Symmetric encryption from AES Library
 #include <Base64.h> //Encoding from Base64 Library
+#include "AES_KEY.h" //Import AES_KEY not stored in source control. Must be exactly 16 characters
 
 //Format of radiopacket: <tracker_ID>*<tracker_checksum><NMEA_sentence_w_checksum>
 
@@ -35,7 +36,7 @@ unsigned long startTime, stopTime;
 String TRACKER_ID_CRC = TRACKER_ID; //a string that will concatenate tracker ID with checksum...Format: "<tracker_ID>*<tracker_crc>"
 String padding = ""; //whitespace padding for radiopacket to be encrypted
 
-const uint8_t KEY[] = "ExampleAESKeyTst";
+const uint8_t KEY[] = AES_KEY;
 
 void setup() 
 {

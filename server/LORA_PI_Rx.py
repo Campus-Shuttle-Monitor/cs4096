@@ -5,6 +5,7 @@ import logging
 import parse
 import simplekml
 import requests
+import os
 
 #name of kml and logger file
 NAME = ""
@@ -28,7 +29,13 @@ class LoRaRcvCont(LoRa):
         super(LoRaRcvCont, self).__init__(verbose)
         self.set_mode(MODE.SLEEP)
         self.set_dio_mapping([0] * 6)
-        self.key = "ExampleAESKeyTst"
+        self.key = os.environ.get('AES_KEY')
+        if not self.key:
+            print("\nERROR: Set environment variable AES_KEY. Must be exactly 16 characters\n")
+            exit(1)
+        if len(self.key) != 16:
+            print("\nERROR: AES_KEY must be exactly 16 characters\n")
+            exit(1)
 
     def start(self):
         self.reset_ptr_rx()
