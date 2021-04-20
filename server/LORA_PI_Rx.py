@@ -1,10 +1,10 @@
 from time import sleep
 from SX127x.LoRa import *
 from SX127x.board_config import BOARD
+from datetime import datetime, timezone, timedelta
 import logging
 import parse
 import simplekml
-import datetime
 import requests
 import os
 
@@ -68,8 +68,8 @@ class LoRaRcvCont(LoRa):
                 #if received NMEA coordinates pass checksum
                 if coord_data[0]:
                     recvd_time = coord_data[3]
-                    cur_time = datetime.datetime.now()
-                    time_delta = datetime.timedelta(
+                    cur_time = datetime.now(timezone.utc)
+                    time_delta = timedelta(
                         hours=cur_time.hour - recvd_time[0],
                         minutes=cur_time.minute - recvd_time[1],
                         seconds=cur_time.second - recvd_time[2]
