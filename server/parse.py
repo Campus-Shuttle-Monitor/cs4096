@@ -66,7 +66,6 @@ def decryptPayload(payload, key):
         decoded = base64.b64decode(payload)
         decrypted = cipher.decrypt(decoded)
         decrypted_payload = bytes(decrypted).decode("utf-8",'ignore').strip()
-        print(payload)
         return decrypted_payload
     except:
         return payload

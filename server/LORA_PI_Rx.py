@@ -2,21 +2,9 @@ from time import sleep
 from SX127x.LoRa import *
 from SX127x.board_config import BOARD
 from datetime import datetime, timezone, timedelta
-import logging
 import parse
-import simplekml
 import requests
 import os
-
-#name of kml and logger file
-NAME = ""
-
-#set up logging
-logger = logging.Logger
-
-#set up variables to build kml file that will map coordinates on Google Earth
-coordList = []
-kml = simplekml.Kml()
 
 URL_BASE = 'https://realtime-location-gateway-waz932k.uc.gateway.dev/shuttle/'
 
@@ -56,10 +44,6 @@ class LoRaRcvCont(LoRa):
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
         decoded_payload = parse.decryptPayload(payload, self.key)        
-        
-        print(decoded_payload)
-
-        logging.info(decoded_payload)
 
         #if decoded payload contains start of NMEA sentence
         if '$' in decoded_payload:
@@ -88,10 +72,6 @@ class LoRaRcvCont(LoRa):
                     """
                     if (time_delta.days == 0 and time_delta.seconds <= 5) \
                             or (time_delta.days == -1 and time_delta.seconds >= 86395):
-                        tup = tuple(coord_data[1:3])
-                        kml.newpoint(coords=[tup])
-                        coordList.append(tup)
-                        print("sucessfully parsed and logged")
                         body = {
                             'longitude': coord_data[1],
                             'latitude': coord_data[2],
@@ -101,13 +81,10 @@ class LoRaRcvCont(LoRa):
                         resp = requests.post(URL_BASE + trackerID_data[1], data=body)
                         if resp.status_code < 300:
                             print('Data sent to server successfully!')
-                            logging.info('Data sent successfully!')
                         else:
                             print('Request failed with status: {} and message: {}'.format(resp.status_code, resp.text))
-                            logging.info('Request failed with status: {} and message: {}'.format(resp.status_code, resp.text))
                     else:
                         print('Received data with outdated timestamp')
-                        logging.info('Received data with outdated timestamp')
 
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
@@ -122,18 +99,6 @@ if __name__ == '__main__':
     lora.set_pa_config(pa_select=1)
 
     try:
-        print("Name of logger and kml file: ", end="")
-        NAME = input()
-        
-        logging.basicConfig(
-        filename= "../FieldTest/log/" + NAME + '.log',
-        filemode='w+',
-        format='%(asctime)s %(levelname)-8s %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',
-        level=logging.DEBUG)
-
-        logging.info('-------------- PROGRAM START --------------')
-
         lora.set_freq(915.0)
         lora.start()
     except KeyboardInterrupt:
@@ -144,8 +109,4 @@ if __name__ == '__main__':
         sys.stdout.flush()
         print("")
         lora.set_mode(MODE.SLEEP)
-        logging.info('--------------- PROGRAM END ---------------')
-        kml.newlinestring(coords=coordList)
-        kml.save("../FieldTest/kml/" + NAME + ".kml")
         BOARD.teardown()
-

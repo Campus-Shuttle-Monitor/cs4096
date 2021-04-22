@@ -101,15 +101,11 @@ void loop() {
                 uint8_t encodedLen = base64_enc_len(RADIOPACKET_WITH_PADDING_LENGTH);
                 uint8_t encoded[encodedLen+1];
                 base64_encode((char*)encoded, (char*)radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
-                Serial.println((char*)encoded);
                 
                 startTime = millis();
                 rf95.send(encoded, sizeof(encoded));
                 stopTime = millis();
                 
-                Serial.print("Transmission Time: ");
-                Serial.print(stopTime-startTime);
-                Serial.println("ms");
                 Serial.println("Delaying for 3 seconds now\n");
                 delay(1500);
                 wdt_reset();
@@ -117,21 +113,16 @@ void loop() {
             }
             else {
                 String tracker_coord = TRACKER_ID_CRC + NMEA_coordinates + padding;
-                Serial.println(tracker_coord);
                 tracker_coord.getBytes(radiopacket,RADIOPACKET_WITH_PADDING_LENGTH+1);
                 aes128_enc_multiple(KEY,radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
                 uint8_t encodedLen = base64_enc_len(RADIOPACKET_WITH_PADDING_LENGTH);
                 uint8_t encoded[encodedLen+1];
                 base64_encode((char*)encoded, (char*)radiopacket, RADIOPACKET_WITH_PADDING_LENGTH);
-                Serial.println((char*)encoded);
                 
                 startTime = millis();
                 rf95.send(encoded, sizeof(encoded));
                 stopTime = millis();
                 
-                Serial.print("\nTransmission Time: ");
-                Serial.print(stopTime-startTime);
-                Serial.println("ms");
                 Serial.println("Sent. Delaying for 3 seconds now\n");
                 
                 delay(1500);
