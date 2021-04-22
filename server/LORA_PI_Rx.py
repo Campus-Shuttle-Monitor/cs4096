@@ -31,11 +31,15 @@ class LoRaRcvCont(LoRa):
         self.set_mode(MODE.SLEEP)
         self.set_dio_mapping([0] * 6)
         self.key = os.environ.get('AES_KEY')
+        self.rpi_id = os.environ.get('RPI_ID')
         if not self.key:
             print("\nERROR: Set environment variable AES_KEY. Must be exactly 16 characters\n")
             exit(1)
         if len(self.key) != 16:
             print("\nERROR: AES_KEY must be exactly 16 characters\n")
+            exit(1)
+        if not self.rpi_id:
+            print("\nERROR: Set environment variable RPI_ID\n")
             exit(1)
 
     def start(self):
@@ -90,8 +94,10 @@ class LoRaRcvCont(LoRa):
                         print("sucessfully parsed and logged")
                         body = {
                             'longitude': coord_data[1],
-                            'latitude': coord_data[2]
-                            #'time': coord_data[3]
+                            'latitude': coord_data[2],
+                            #'time': coord_data[3],
+                            'rpi_id': self.rpi_id,
+                            'tracker_id': trackerID_data[1]
                         }
                         resp = requests.post(URL_BASE + trackerID_data[1], data=body)
                         if resp.status_code < 300:
