@@ -4,13 +4,19 @@ The trackers are prototyped with Uno's. Each Uno has a **LoRa** (stands for **Lo
 
 ![](images/TrackerCommunication.png?raw=true)
 
-**UPDATE (03/27/2021):** Functionality of multiple trackers is a stretch goal (must get LoRa's on Uno's to be able to receive a signal for turn-based transmissions to avoid collision of radio packets). Successful tracking of the entire campus shuttle route for a single tracker actually involved two RPi's. This is because there were too many obstructions (tall buildings) for just one RPi to receive data of the entire route. Best RPi positions were the North window and South window of the top floor of University Commons. To visualize this data, you can upload the _NorthWestWindow.kml_ and _SouthWindow.kml_ found in the _FieldTest/kml_ direcotry to [Google Earth](https://earth.google.com/web/). We noticed occasional interference in the RPi's reception of the radio packets, but because the Uno is transmitting the coordinates every 3 seconds, the interference does not significantly affect results. If desirable, the delay between transmissions can be shortened to compensate for the occasional interference that will be encountered.
+**UPDATE (03/27/2021):** Successful tracking of the entire campus shuttle route for a single tracker actually involved two RPi's. This is because there were too many obstructions (tall buildings) for just one RPi to receive data of the entire route. Best RPi positions were the North window and South window of the top floor of University Commons. To visualize this data, you can upload the _NorthWestWindow.kml_ and _SouthWindow.kml_ found in the _FieldTest/kml_ direcotry to [Google Earth](https://earth.google.com/web/). We noticed occasional interference in the RPi's reception of the radio packets, but because the Uno is transmitting the coordinates every 3 seconds, the interference does not significantly affect results. If desirable, the delay between transmissions can be shortened to compensate for the occasional interference that will be encountered.
+
+**TODO (Documented in Git Issues):**
+
+1. Current implementation is for a single tracker. Must extend functionality of multiple trackers by finding a way to implement turn-based Uno transmissions to avoid collision of radio packets when received by the RPi's
+
+2. Current implementation is still susceptible to a replay attack. Currently, Pi checks the hours, minutes, and seconds before sending it to Firebase to make sure received radio packet is within 5 seconds of the current time. This doesn't entirely prevent the replay attack because a hacker could capture the packets from the day before and re-transmit the packets the next day at the very same time it was captured the day before. We must perform date checking along with time checking. However, this requires that the Uno send a different NMEA sentence than GPGLL. We probably want GPRMC instead of GPGLL.
 
 ## Hardware
 
 Components needed:
 
-- 2 Raspberry Pi's (any RPi that is not RPi Zero should work. We used [RPi 4B](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/ref=sr_1_2?dchild=1&keywords=raspberry+pi+4b&qid=1612308205&sr=8-2))
+- 2 Raspberry Pi's (any RPi with GPIO pins and WiFi capability should work. We used our personal [RPi 4B](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/ref=sr_1_2?dchild=1&keywords=raspberry+pi+4b&qid=1612308205&sr=8-2) initially but had the final implementation on more affordable [RPi Zero W](https://www.amazon.com/Vilros-Raspberry-Kit-Premium-Essential-Accessories/dp/B0748NK116/ref=pd_di_sccai_5?pd_rd_w=Y4XrR&pf_rd_p=c9443270-b914-4430-a90b-72e3e7e784e0&pf_rd_r=DJYV6W1AESWC3CYERM5X&pd_rd_r=14b96814-d2e7-4d73-a52e-89ab3754b4f7&pd_rd_wg=hoceY&pd_rd_i=B0748NK116&psc=1))
 - 1 Arduino Uno (any Uno clone should work. We used [Elegoo Uno R3](https://www.amazon.com/ELEGOO-Board-ATmega328P-ATMEGA16U2-Compliant/dp/B01EWOE0UU/ref=sxts_sxwds-bia-wc-rsf1_0?crid=3939LJ6SW7KCR&cv_ct_cx=elegoo+uno+r3&dchild=1&keywords=elegoo+uno+r3&pd_rd_i=B01EWOE0UU&pd_rd_r=ec55e4ea-786d-4654-bb84-64a90e6dcf24&pd_rd_w=LOKWh&pd_rd_wg=wMGsh&pf_rd_p=5d815bf0-8407-4925-96a4-1fe69f424373&pf_rd_r=Q7CBKQAC62KQ14VDHHXB&psc=1&qid=1612308182&sprefix=elegoo+uno%2Caps%2C182&sr=1-1-526ea17f-3f73-4b50-8cd8-6acff948fa5a))
 - 1 GPS Module w/ UART interface (We used [Ublox Neo-6M](https://www.amazon.com/HiLetgo-GY-NEO6MV2-Controller-Ceramic-Antenna/dp/B01D1D0F5M/ref=sr_1_10?dchild=1&keywords=neo+ublox+6m+gps&qid=1612307597&sr=8-10))
 - 3 LoRa Radio Modules w/ SPI interface and 915 Mhz operation capability (We used [RFM95W](https://www.adafruit.com/product/3072))
@@ -150,13 +156,19 @@ Navigate to the **server** directory in the command line and set the AES_KEY env
 export AES_KEY="ExampleAESKeyTst"
 ```
 
-Once the AES key is set, you can run the following command to start the server:
+There are currently 2 RPi's being used, so we need a way to identify which RPi is sending the coordinates to the server. Set a unique RPI_ID environment variable. For example:
+
+```
+export RPI_ID=1
+```
+
+Once the AES key and RPi ID is set, you can run the following command to start the server:
 
 ```
 python3 LORA_PI_Rx.py
 ```
 
-You'll be prompted to name the logger and kml files. This is for field testing purposes. You should name it something meaningful. We found naming it after the location of the RPi useful. This part will need to be removed in the production environment.
+This part is not applicable to the master branch. In the debug branch, you'll be prompted to name the logger and kml files. This is for field testing and debugging purposes. You should name it something meaningful. We found naming it after the location of the RPi useful.
 
 ### Uno
 
@@ -170,7 +182,11 @@ Once you've saved the file, open the **LORA_CLIENT_Tx.ino** sketch in the Arduin
 
 ### Results
 
-The RPi should now be receiving data from the Uno. You should see the encrypted message outputted to the command line. If there is no interference, you should then see the decrypted message outputted, following a "successfully parsed and logged" print statement. If the HTTPS POST request to the server is successful, you should see a "Data sent to server successfully" print statement. Otherwise, you should see a request failed with status code and response message print statement.
+The RPi should now be receiving data from the Uno.
+
+If you are on the debug branch, you should see the encrypted message outputted to the command line. If there is no interference, you should then see the decrypted message outputted, following a "successfully parsed and logged" print statement. If the HTTPS POST request to the server is successful, you should see a "Data sent to server successfully" print statement. Otherwise, you should see a request failed with status code and response message print statement.
+
+If you are on the master branch, you should see a "Received" print statement on reception of a radio packet and a "Data sent to server successfully" print statement if the HTTPS POST request to the server is successful. Otherwise, you should see a request failed with status code and response message print statement.
 
 ## Resources
 
