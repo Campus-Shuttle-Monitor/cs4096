@@ -1,13 +1,26 @@
-FROM python:3 as builder
+FROM python:3-slim as base
 
-COPY requirements.txt .
+FROM base as builder
 
-RUN pip install --user -r requirements.txt
+RUN pip install pipenv
+RUN apt-get update && apt-get install -y --no-install-recommends git gcc build-essential
 
-FROM python:3-alpine
+COPY Pipfile* ./
+RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy
 
-COPY --from=builder /root/.local /root/.local
+FROM base as runtime
 
+# Copy virtual env from python-deps stage
+COPY --from=builder /.venv /.venv
+ENV PATH="/.venv/bin:$PATH"
+
+# Create and switch to a new user
+RUN useradd --create-home appuser
+WORKDIR /home/appuser
+USER appuser
+
+# Install application into container
 COPY . .
 
-CMD [ "python", "./LORA_PI_Rx.py" ]
+# Run the application
+ENTRYPOINT [ "python", "./LORA_PI_Rx.py" ]

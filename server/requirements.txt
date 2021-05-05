@@ -1,6 +1,0 @@
-RPi.GPIO
-spidev
-pyLoRa
-crc8
-git+https://github.com/inmcm/micropyGPS.git
-git+https://github.com/eisoldt/simplekml.git

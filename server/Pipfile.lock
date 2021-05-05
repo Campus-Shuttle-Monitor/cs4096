@@ -1,0 +1,60 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "33d3713b67cd2a93928c067f521d0c8b02f4de8e08a860d90f55d85f0367d38a"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.9"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "crc8": {
+            "hashes": [
+                "sha256:70d8905af9a3813cdf0852346e6026180d14e06f870d816c5cd41b78da7114af"
+            ],
+            "index": "pypi",
+            "version": "==0.1.0"
+        },
+        "micropygps": {
+            "editable": true,
+            "git": "https://github.com/inmcm/micropyGPS.git",
+            "ref": "95b739381c8feb7c6b91b46db42646074c52a609"
+        },
+        "pylora": {
+            "hashes": [
+                "sha256:5e188e4ae4a53ce7cc5325bf8864ccadf63b4c8ce3c4800115877d46ef269c5b",
+                "sha256:905f648f21f40d8691a6520dbdbc04755a78db906046e8fc4e49d03a62561a8d"
+            ],
+            "index": "pypi",
+            "version": "==0.3.1"
+        },
+        "rpi.gpio": {
+            "hashes": [
+                "sha256:7424bc6c205466764f30f666c18187a0824077daf20b295c42f08aea2cb87d3f"
+            ],
+            "index": "pypi",
+            "version": "==0.7.0"
+        },
+        "simplekml": {
+            "editable": true,
+            "git": "https://github.com/eisoldt/simplekml.git",
+            "ref": "3ef690048ffc7370a57d4a30e2d261bdb2cd974a"
+        },
+        "spidev": {
+            "hashes": [
+                "sha256:8a7f5c289f161ea2ac4697fa8a10918232c990678dd0053084b3c43b1363910d"
+            ],
+            "index": "pypi",
+            "version": "==3.5"
+        }
+    },
+    "develop": {}
+}
