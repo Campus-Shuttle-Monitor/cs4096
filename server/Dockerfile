@@ -4,7 +4,7 @@ COPY requirements.txt .
 
 RUN pip install --user -r requirements.txt
 
-FROM python:3-slim
+FROM python:3-alpine
 
 COPY --from=builder /root/.local /root/.local
 
