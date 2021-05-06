@@ -91,6 +91,7 @@ class LoRaRcvCont(LoRa):
         self.set_mode(MODE.RXCONT) 
 
 if __name__ == '__main__':
+    print("Starting LoRa server...")
     lora = LoRaRcvCont(verbose=False)
     lora.set_mode(MODE.STDBY)
 
