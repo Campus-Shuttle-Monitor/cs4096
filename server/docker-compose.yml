@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - AES_KEY=${AES_KEY}
+      - RPI_ID=${RPI_ID}
     volumes:
       - /proc/:/proc/
       - /dev/:/dev/
