@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  pylora:
+    build: .
+    restart: unless-stopped
+  ouroboros:
+    image: pyouroboros/ouroboros
+    environment:
+      - CLEANUP=true
+      - SELF_UPDATE=true
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
