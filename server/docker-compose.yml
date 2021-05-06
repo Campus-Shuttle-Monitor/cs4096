@@ -1,8 +1,8 @@
 version: '3.3'
 
 services:
-  pylora:
-    build: .
+  py-lora-server:
+    image: ghcr.io/campus-shuttle-monitor/py-lora-server
     restart: unless-stopped
     volumes:
       - /proc/:/proc/
