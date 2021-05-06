@@ -8,8 +8,9 @@ name = "pypi"
 spidev = "*"
 pylora = "*"
 crc8 = "*"
-micropygps = {editable = true, git = "https://github.com/inmcm/micropyGPS.git"}
-simplekml = {editable = true, git = "https://github.com/eisoldt/simplekml.git"}
+crypto = "*"
+micropygps = { editable = true, git = "https://github.com/inmcm/micropyGPS.git" }
+simplekml = { editable = true, git = "https://github.com/eisoldt/simplekml.git" }
 
 [dev-packages]
 

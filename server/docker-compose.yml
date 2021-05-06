@@ -1,9 +1,14 @@
-version: '3'
+version: '3.3'
 
 services:
   pylora:
     build: .
     restart: unless-stopped
+    volumes:
+      - /proc/:/proc/
+      - /dev/:/dev/
+      - /sys/:/sys/
+    privileged: true
   ouroboros:
     image: pyouroboros/ouroboros
     environment:
