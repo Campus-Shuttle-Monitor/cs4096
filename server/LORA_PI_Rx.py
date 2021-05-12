@@ -43,7 +43,7 @@ class LoRaRcvCont(LoRa):
         print("\nReceived: ")
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
-        decoded_payload = parse.decryptPayload(payload, self.key)        
+        decoded_payload = parse.decryptPayload(payload, self.key)
 
         #if decoded payload contains start of NMEA sentence
         if '$' in decoded_payload:
@@ -85,12 +85,15 @@ class LoRaRcvCont(LoRa):
                             print('Request failed with status: {} and message: {}'.format(resp.status_code, resp.text))
                     else:
                         print('Received data with outdated timestamp')
+            else:
+                print('Invalid checksum! Full message: "{}"'.format(trackerID_data[1]))
 
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
-        self.set_mode(MODE.RXCONT) 
+        self.set_mode(MODE.RXCONT)
 
 if __name__ == '__main__':
+    print("Starting LoRa server...")
     lora = LoRaRcvCont(verbose=False)
     lora.set_mode(MODE.STDBY)
 

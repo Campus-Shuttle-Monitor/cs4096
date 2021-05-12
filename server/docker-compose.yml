@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  py-lora-server:
+    image: ghcr.io/campus-shuttle-monitor/py-lora-server
+    restart: unless-stopped
+    environment:
+      - AES_KEY=${AES_KEY}
+      - RPI_ID=${RPI_ID}
+    volumes:
+      - /proc/:/proc/
+      - /dev/:/dev/
+      - /sys/:/sys/
+    privileged: true
+  ouroboros:
+    image: pyouroboros/ouroboros
+    environment:
+      - CLEANUP=true
+      - SELF_UPDATE=true
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

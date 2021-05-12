@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"rpi.gpio" = "*"
+spidev = "*"
+pylora = "*"
+crc8 = "*"
+pycrypto = "*"
+micropygps = { editable = true, git = "https://github.com/inmcm/micropyGPS.git" }
+simplekml = { editable = true, git = "https://github.com/eisoldt/simplekml.git" }
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
