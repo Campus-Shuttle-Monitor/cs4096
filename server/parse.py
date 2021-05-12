@@ -51,7 +51,7 @@ def parseTrackerID(trackerID_with_CRC):
         #return whether calculated tracker checksum matches received tracker checksum and tracker ID
         return [calculate_CRC.hexdigest() == tracker_CRC, tracker_ID]
     
-    return [False, None]
+    return [False, trackerID_with_CRC]
 
 
 # decrypts AES encrypted payload given key
